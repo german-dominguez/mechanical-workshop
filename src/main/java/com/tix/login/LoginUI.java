@@ -13,14 +13,13 @@ import javax.swing.ImageIcon;
  */
 public class LoginUI extends javax.swing.JFrame {
 
-    
-
     /**
      * Creates new form LoginUI
      */
     public LoginUI() {
         initComponents();
         setLocationRelativeTo(null);
+        setIconImage(image.getImage());
     }
 
     /**
@@ -32,11 +31,8 @@ public class LoginUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        img = new ImageIcon(".\\src\\main\\resources\\com\\tix\\images\\favicon.png");
         background = new javax.swing.JPanel();
         title_lbl = new javax.swing.JLabel();
-        icon_image = new javax.swing.JLabel();
-        icon_name = new javax.swing.JLabel();
         logo_name = new javax.swing.JLabel();
         logo_image = new javax.swing.JLabel();
         city_image = new javax.swing.JLabel();
@@ -53,30 +49,21 @@ public class LoginUI extends javax.swing.JFrame {
         login_txt = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(800, 500));
         setResizable(false);
-        setIconImage(img.getImage());
 
         background.setBackground(new java.awt.Color(255, 255, 255));
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         title_lbl.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
         title_lbl.setText("INICIAR SESIÓN");
-        background.add(title_lbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 190, 30));
-
-        icon_image.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        icon_image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/tix/images/favicon.png"))); // NOI18N
-        background.add(icon_image, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 40, 30));
-
-        icon_name.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
-        icon_name.setText("LOGO");
-        background.add(icon_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 70, 30));
+        background.add(title_lbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 190, 30));
 
         logo_name.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
         logo_name.setForeground(new java.awt.Color(255, 255, 255));
         logo_name.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        logo_name.setText("NOMBRE DE LA EMPRESA");
+        logo_name.setText("NOMBRE EMPRESA");
         background.add(logo_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 240, 290, 40));
 
         logo_image.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -84,7 +71,7 @@ public class LoginUI extends javax.swing.JFrame {
         background.add(logo_image, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 90, 290, 150));
 
         city_image.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        city_image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/tix/images/city.png"))); // NOI18N
+        city_image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/tix/images/wallpaper.png"))); // NOI18N
         background.add(city_image, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, 290, 500));
 
         header.setBackground(new java.awt.Color(255, 255, 255));
@@ -159,7 +146,6 @@ public class LoginUI extends javax.swing.JFrame {
                 user_txtMousePressed(evt);
             }
         });
-        
         background.add(user_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 390, 30));
 
         password_lbl.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
@@ -289,17 +275,14 @@ public class LoginUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_password_txtMousePressed
 
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    ImageIcon image = new ImageIcon(".\\src\\main\\resources\\com\\tix\\images\\icon.png");
     private int xMouse, yMouse;
-    private ImageIcon img;
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
     private javax.swing.JLabel city_image;
     private javax.swing.JPanel exit_btn;
     private javax.swing.JLabel exit_txt;
     private javax.swing.JPanel header;
-    private javax.swing.JLabel icon_image;
-    private javax.swing.JLabel icon_name;
     private javax.swing.JPanel login_btn;
     private javax.swing.JLabel login_txt;
     private javax.swing.JLabel logo_image;
