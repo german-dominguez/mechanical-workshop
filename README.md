@@ -1,2 +1,2 @@
 # mechanical-workshop
-![Alt text](relative/path/to/logo.png?raw=true "Title")
+![plot](./src/main/resources/com/tix/images/Login/icon.png)
