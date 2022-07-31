@@ -5,10 +5,10 @@
 package com.tix.dashboard.event;
 
 import com.tix.dashboard.DashboardFrame;
-import com.tix.dashboard.Form1;
-import com.tix.dashboard.Form2;
-import com.tix.dashboard.Form3;
-import com.tix.dashboard.Form4;
+import com.tix.dashboard.forms.Form1;
+import com.tix.dashboard.forms.Form2;
+import com.tix.dashboard.forms.Form3;
+import com.tix.dashboard.forms.Form4;
 import com.tix.main.MechanicalWorkshop;
 import javax.swing.JButton;
 
