@@ -33,6 +33,7 @@ public class LoginUI extends javax.swing.JFrame {
     private void initComponents() {
 
         background = new javax.swing.JPanel();
+        backgroundLabel = new javax.swing.JLabel();
         titleLabel = new javax.swing.JLabel();
         userLabel = new javax.swing.JLabel();
         userSeparator = new javax.swing.JSeparator();
@@ -41,7 +42,6 @@ public class LoginUI extends javax.swing.JFrame {
         passwordSeparator = new javax.swing.JSeparator();
         passwordField = new javax.swing.JPasswordField();
         loginButton = new javax.swing.JButton();
-        backgroundImage = new javax.swing.JLabel();
         header = new javax.swing.JPanel();
         exitButton = new javax.swing.JButton();
 
@@ -52,6 +52,9 @@ public class LoginUI extends javax.swing.JFrame {
 
         background.setBackground(new java.awt.Color(255, 255, 255));
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        backgroundLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/tix/images/login/wallpaper.png"))); // NOI18N
+        background.add(backgroundLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 300, 510));
 
         titleLabel.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
         titleLabel.setText("SIGN IN");
@@ -113,10 +116,6 @@ public class LoginUI extends javax.swing.JFrame {
             }
         });
         background.add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 140, 40));
-
-        backgroundImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        backgroundImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/tix/images/login/wallpaper.png"))); // NOI18N
-        background.add(backgroundImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 0, 290, 500));
 
         header.setBackground(new java.awt.Color(255, 255, 255));
         header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -249,7 +248,7 @@ public class LoginUI extends javax.swing.JFrame {
     private int xMouse, yMouse;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
-    private javax.swing.JLabel backgroundImage;
+    private javax.swing.JLabel backgroundLabel;
     private javax.swing.JButton exitButton;
     private javax.swing.JPanel header;
     private javax.swing.JButton loginButton;
