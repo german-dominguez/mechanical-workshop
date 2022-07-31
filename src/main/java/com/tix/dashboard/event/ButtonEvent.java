@@ -5,7 +5,7 @@
 package com.tix.dashboard.event;
 
 import com.tix.dashboard.DashboardFrame;
-import com.tix.dashboard.forms.Form1;
+import com.tix.dashboard.forms.StaffForm;
 import com.tix.dashboard.forms.Form2;
 import com.tix.dashboard.forms.Form3;
 import com.tix.dashboard.forms.Form4;
@@ -26,9 +26,9 @@ public class ButtonEvent {
     public void showForm(JButton button) {
         switch (button.getText()) {
             case "Dashboard" ->
-                dashboard().showForm(new Form1());
-            case "Stuff" ->
                 dashboard().showForm(new Form2());
+            case "Stuff" ->
+                dashboard().showForm(new StaffForm());
             case "Vehicles" ->
                 dashboard().showForm(new Form3());
             case "Statistics" ->
