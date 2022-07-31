@@ -221,9 +221,9 @@ public class LoginUI extends javax.swing.JFrame {
     }//GEN-LAST:event_loginButtonMouseExited
 
     private void loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseClicked
-        new DashboardFrame().setVisible(true);
+        dashboardFrame = new DashboardFrame();
+        dashboardFrame.setVisible(true);
         setVisible(false);
-
     }//GEN-LAST:event_loginButtonMouseClicked
 
     private void exitButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButtonMouseEntered
@@ -240,7 +240,12 @@ public class LoginUI extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitButtonMouseClicked
 
-    ImageIcon image = new ImageIcon(".\\src\\main\\resources\\com\\tix\\images\\login\\icon.png");
+    public DashboardFrame getDashboardFrame() {
+        return dashboardFrame;
+    }
+    
+    private DashboardFrame dashboardFrame;
+    private ImageIcon image = new ImageIcon(".\\src\\main\\resources\\com\\tix\\images\\login\\icon.png");
     private int xMouse, yMouse;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;

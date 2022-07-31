@@ -1,8 +1,8 @@
 package com.tix.dashboard;
 
-public class Panel1 extends javax.swing.JPanel {
+public class Form2 extends javax.swing.JPanel {
 
-    public Panel1() {
+    public Form2() {
         initComponents();
     }
 
@@ -18,7 +18,7 @@ public class Panel1 extends javax.swing.JPanel {
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Roboto Black", 0, 48)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Form 1");
+        jLabel1.setText("Form 2");
         add(jLabel1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 

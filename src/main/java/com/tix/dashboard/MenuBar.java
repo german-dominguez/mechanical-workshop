@@ -4,7 +4,9 @@
  */
 package com.tix.dashboard;
 
+import com.tix.dashboard.event.ButtonEvent;
 import com.tix.login.LoginUI;
+import com.tix.main.MechanicalWorkshop;
 import java.awt.Color;
 
 /**
@@ -49,6 +51,9 @@ public class MenuBar extends javax.swing.JPanel {
         dashboardButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         dashboardButton.setIconTextGap(10);
         dashboardButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                dashboardButtonMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonMouseEntered(evt);
             }
@@ -74,6 +79,9 @@ public class MenuBar extends javax.swing.JPanel {
         stuffButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         stuffButton.setIconTextGap(10);
         stuffButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                stuffButtonMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonMouseEntered(evt);
             }
@@ -99,6 +107,9 @@ public class MenuBar extends javax.swing.JPanel {
         vehiclesButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         vehiclesButton.setIconTextGap(10);
         vehiclesButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                vehiclesButtonMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonMouseEntered(evt);
             }
@@ -124,6 +135,9 @@ public class MenuBar extends javax.swing.JPanel {
         statisticsButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         statisticsButton.setIconTextGap(10);
         statisticsButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                statisticsButtonMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 buttonMouseEntered(evt);
             }
@@ -198,41 +212,92 @@ public class MenuBar extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonMouseEntered
-        if(evt.getSource().equals(dashboardButton)) dashboardButton.setBackground(new Color(224,224,224));
-        if(evt.getSource().equals(stuffButton)) stuffButton.setBackground(new Color(224,224,224));
-        if(evt.getSource().equals(vehiclesButton)) vehiclesButton.setBackground(new Color(224,224,224));
-        if(evt.getSource().equals(statisticsButton)) statisticsButton.setBackground(new Color(224,224,224));
-        if(evt.getSource().equals(logoutButton)) logoutButton.setBackground(new Color(224,224,224));
+        if (evt.getSource().equals(dashboardButton)) {
+            dashboardButton.setBackground(new Color(224, 224, 224));
+        }
+        if (evt.getSource().equals(stuffButton)) {
+            stuffButton.setBackground(new Color(224, 224, 224));
+        }
+        if (evt.getSource().equals(vehiclesButton)) {
+            vehiclesButton.setBackground(new Color(224, 224, 224));
+        }
+        if (evt.getSource().equals(statisticsButton)) {
+            statisticsButton.setBackground(new Color(224, 224, 224));
+        }
+        if (evt.getSource().equals(logoutButton))
+            logoutButton.setBackground(new Color(224, 224, 224));
     }//GEN-LAST:event_buttonMouseEntered
 
     private void buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonMouseExited
-        if(evt.getSource().equals(dashboardButton)) dashboardButton.setBackground(Color.white);
-        if(evt.getSource().equals(stuffButton)) stuffButton.setBackground(Color.white);
-        if(evt.getSource().equals(vehiclesButton)) vehiclesButton.setBackground(Color.white);
-        if(evt.getSource().equals(statisticsButton)) statisticsButton.setBackground(Color.white);
-        if(evt.getSource().equals(logoutButton)) logoutButton.setBackground(Color.white);
+        if (evt.getSource().equals(dashboardButton)) {
+            dashboardButton.setBackground(Color.white);
+        }
+        if (evt.getSource().equals(stuffButton)) {
+            stuffButton.setBackground(Color.white);
+        }
+        if (evt.getSource().equals(vehiclesButton)) {
+            vehiclesButton.setBackground(Color.white);
+        }
+        if (evt.getSource().equals(statisticsButton)) {
+            statisticsButton.setBackground(Color.white);
+        }
+        if (evt.getSource().equals(logoutButton))
+            logoutButton.setBackground(Color.white);
     }//GEN-LAST:event_buttonMouseExited
 
     private void buttonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonMousePressed
-        if(evt.getSource().equals(dashboardButton)) dashboardButton.setBackground(Color.LIGHT_GRAY);
-        if(evt.getSource().equals(stuffButton)) stuffButton.setBackground(Color.LIGHT_GRAY);
-        if(evt.getSource().equals(vehiclesButton)) vehiclesButton.setBackground(Color.LIGHT_GRAY);
-        if(evt.getSource().equals(statisticsButton)) statisticsButton.setBackground(Color.LIGHT_GRAY);
-        if(evt.getSource().equals(logoutButton)) logoutButton.setBackground(Color.LIGHT_GRAY);
+        if (evt.getSource().equals(dashboardButton)) {
+            dashboardButton.setBackground(Color.LIGHT_GRAY);
+        }
+        if (evt.getSource().equals(stuffButton)) {
+            stuffButton.setBackground(Color.LIGHT_GRAY);
+        }
+        if (evt.getSource().equals(vehiclesButton)) {
+            vehiclesButton.setBackground(Color.LIGHT_GRAY);
+        }
+        if (evt.getSource().equals(statisticsButton)) {
+            statisticsButton.setBackground(Color.LIGHT_GRAY);
+        }
+        if (evt.getSource().equals(logoutButton))
+            logoutButton.setBackground(Color.LIGHT_GRAY);
     }//GEN-LAST:event_buttonMousePressed
 
     private void buttonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonMouseReleased
-        if(evt.getSource().equals(dashboardButton)) dashboardButton.setBackground(Color.white);
-        if(evt.getSource().equals(stuffButton)) stuffButton.setBackground(Color.white);
-        if(evt.getSource().equals(vehiclesButton)) vehiclesButton.setBackground(Color.white);
-        if(evt.getSource().equals(statisticsButton)) statisticsButton.setBackground(Color.white);
-        if(evt.getSource().equals(logoutButton)) logoutButton.setBackground(Color.white);
+        if (evt.getSource().equals(dashboardButton)) {
+            dashboardButton.setBackground(Color.white);
+        }
+        if (evt.getSource().equals(stuffButton)) {
+            stuffButton.setBackground(Color.white);
+        }
+        if (evt.getSource().equals(vehiclesButton)) {
+            vehiclesButton.setBackground(Color.white);
+        }
+        if (evt.getSource().equals(statisticsButton)) {
+            statisticsButton.setBackground(Color.white);
+        }
+        if (evt.getSource().equals(logoutButton))
+            logoutButton.setBackground(Color.white);
     }//GEN-LAST:event_buttonMouseReleased
 
     private void logoutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseClicked
-        setVisible(false);
-        new LoginUI().setVisible(true);
+        new ButtonEvent().showDashboard();
     }//GEN-LAST:event_logoutButtonMouseClicked
+
+    private void dashboardButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashboardButtonMouseClicked
+        new ButtonEvent().showForm(dashboardButton);
+    }//GEN-LAST:event_dashboardButtonMouseClicked
+
+    private void stuffButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_stuffButtonMouseClicked
+        new ButtonEvent().showForm(stuffButton);
+    }//GEN-LAST:event_stuffButtonMouseClicked
+
+    private void vehiclesButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vehiclesButtonMouseClicked
+        new ButtonEvent().showForm(vehiclesButton);
+    }//GEN-LAST:event_vehiclesButtonMouseClicked
+
+    private void statisticsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_statisticsButtonMouseClicked
+        new ButtonEvent().showForm(statisticsButton);
+    }//GEN-LAST:event_statisticsButtonMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

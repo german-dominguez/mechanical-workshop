@@ -2,7 +2,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
  */
-
 package com.tix.main;
 
 import com.tix.login.LoginUI;
@@ -12,6 +11,8 @@ import com.tix.login.LoginUI;
  * @author Germanchoo
  */
 public class MechanicalWorkshop {
+
+    private static LoginUI loginUI;
 
     /**
      * @param args the command line arguments
@@ -42,7 +43,16 @@ public class MechanicalWorkshop {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new LoginUI().setVisible(true);
+            loginUI = new LoginUI();
+            loginUI.setVisible(true);
         });
+    }
+
+    public static LoginUI getLoginUI() {
+        return loginUI;
+    }
+
+    public static void setLoginUI(LoginUI loginUI) {
+        MechanicalWorkshop.loginUI = loginUI;
     }
 }
