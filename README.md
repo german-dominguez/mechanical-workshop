@@ -1,2 +1,2 @@
 # mechanical-workshop
-![plot](./src/main/resources/com/tix/images/Login/icon.png)
+![alt text](https://github.com/german-dominguez/mechanical-workshop/blob/master/src/main/resources/com/tix/images/logo.png?raw=true)
