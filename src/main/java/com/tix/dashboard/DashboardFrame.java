@@ -6,8 +6,11 @@ package com.tix.dashboard;
 
 import java.awt.Color;
 import java.awt.Component;
-import javax.swing.JPanel;
-
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import rsscalelabel.RSScaleLabel;
 /**
  *
  * @author Germanchoo
@@ -32,10 +35,9 @@ public class DashboardFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         backgroundPanel = new javax.swing.JPanel();
-        formPanel = new javax.swing.JPanel();
         headerPanel = new javax.swing.JPanel();
         exitButton = new javax.swing.JButton();
-        menuBar1 = new com.tix.dashboard.MenuBar();
+        menu2 = new com.tix.dashboard.components.Menu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -43,10 +45,6 @@ public class DashboardFrame extends javax.swing.JFrame {
 
         backgroundPanel.setBackground(new java.awt.Color(255, 255, 255));
         backgroundPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        formPanel.setBackground(new java.awt.Color(255, 255, 255));
-        formPanel.setLayout(new java.awt.BorderLayout());
-        backgroundPanel.add(formPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, 850, 470));
 
         headerPanel.setBackground(new java.awt.Color(255, 255, 255));
         headerPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -96,7 +94,7 @@ public class DashboardFrame extends javax.swing.JFrame {
         );
 
         backgroundPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 40));
-        backgroundPanel.add(menuBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 120, 500));
+        backgroundPanel.add(menu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
         getContentPane().add(backgroundPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 500));
 
@@ -129,18 +127,23 @@ public class DashboardFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_headerPanelMouseDragged
 
     public void showForm(Component component) {
-        formPanel.removeAll();
-        formPanel.add(component);
-        formPanel.revalidate();
-        formPanel.repaint();
+        //formPanel.removeAll();
+        //formPanel.revalidate();
+        //formPanel.repaint();
+    }
+    
+    private void setImageLabel(JLabel jLabel, String path){
+        ImageIcon image = new ImageIcon(path);
+        Icon icon = new ImageIcon(image.getImage().getScaledInstance(jLabel.getWidth(), jLabel.getHeight(), Image.SCALE_DEFAULT));
+        jLabel.setIcon(icon);
+        this.repaint();
     }
     
     private int xMouse, yMouse;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel backgroundPanel;
     private javax.swing.JButton exitButton;
-    private javax.swing.JPanel formPanel;
     private javax.swing.JPanel headerPanel;
-    private com.tix.dashboard.MenuBar menuBar1;
+    private com.tix.dashboard.components.Menu menu2;
     // End of variables declaration//GEN-END:variables
 }

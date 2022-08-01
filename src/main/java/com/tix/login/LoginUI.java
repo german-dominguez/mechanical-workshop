@@ -244,7 +244,7 @@ public class LoginUI extends javax.swing.JFrame {
     }
     
     private DashboardFrame dashboardFrame;
-    private ImageIcon image = new ImageIcon(".\\src\\main\\resources\\com\\tix\\images\\login\\icon.png");
+    private final ImageIcon image = new ImageIcon(".\\src\\main\\resources\\com\\tix\\images\\login\\icon.png");
     private int xMouse, yMouse;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
