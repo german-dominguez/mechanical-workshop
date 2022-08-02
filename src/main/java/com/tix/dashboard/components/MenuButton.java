@@ -4,7 +4,6 @@
  */
 package com.tix.dashboard.components;
 
-import com.tix.dashboard.event.ButtonEvent;
 import java.awt.Color;
 
 /**
@@ -30,7 +29,7 @@ public class MenuButton extends javax.swing.JPanel {
     private void initComponents() {
 
         dashboardButton = new javax.swing.JButton();
-        stuffButton = new javax.swing.JButton();
+        staffButton = new javax.swing.JButton();
         vehiclesButton = new javax.swing.JButton();
         logoutButton = new javax.swing.JButton();
 
@@ -65,32 +64,32 @@ public class MenuButton extends javax.swing.JPanel {
             }
         });
 
-        stuffButton.setBackground(new java.awt.Color(255, 255, 255));
-        stuffButton.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
-        stuffButton.setForeground(new java.awt.Color(51, 51, 51));
-        stuffButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/tix/images/dashboard/2.png"))); // NOI18N
-        stuffButton.setText("Stuff");
-        stuffButton.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 1));
-        stuffButton.setBorderPainted(false);
-        stuffButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        stuffButton.setFocusable(false);
-        stuffButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        stuffButton.setIconTextGap(10);
-        stuffButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        staffButton.setBackground(new java.awt.Color(255, 255, 255));
+        staffButton.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
+        staffButton.setForeground(new java.awt.Color(51, 51, 51));
+        staffButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/tix/images/dashboard/2.png"))); // NOI18N
+        staffButton.setText("Staff");
+        staffButton.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 1));
+        staffButton.setBorderPainted(false);
+        staffButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        staffButton.setFocusable(false);
+        staffButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        staffButton.setIconTextGap(10);
+        staffButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                stuffButtonMouseClicked(evt);
+                staffButtonMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                stuffButtonMouseEntered(evt);
+                staffButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                stuffButtonMouseExited(evt);
+                staffButtonMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                stuffButtonMousePressed(evt);
+                staffButtonMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                stuffButtonMouseReleased(evt);
+                staffButtonMouseReleased(evt);
             }
         });
 
@@ -157,7 +156,7 @@ public class MenuButton extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(dashboardButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(stuffButton, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+            .addComponent(staffButton, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
             .addComponent(vehiclesButton, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
             .addComponent(logoutButton, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
         );
@@ -167,7 +166,7 @@ public class MenuButton extends javax.swing.JPanel {
                 .addGap(21, 21, 21)
                 .addComponent(dashboardButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(stuffButton)
+                .addComponent(staffButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(vehiclesButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -193,31 +192,30 @@ public class MenuButton extends javax.swing.JPanel {
     }//GEN-LAST:event_dashboardButtonMouseReleased
 
     private void dashboardButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashboardButtonMouseClicked
-        // TODO add your handling code here:
     }//GEN-LAST:event_dashboardButtonMouseClicked
 
-    private void stuffButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_stuffButtonMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_stuffButtonMouseClicked
+    private void staffButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_staffButtonMouseClicked
 
-    private void stuffButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_stuffButtonMouseEntered
-        stuffButton.setBackground(new Color(225, 225, 225));
-    }//GEN-LAST:event_stuffButtonMouseEntered
+    }//GEN-LAST:event_staffButtonMouseClicked
 
-    private void stuffButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_stuffButtonMouseExited
-        stuffButton.setBackground(new Color(255, 255, 255));
-    }//GEN-LAST:event_stuffButtonMouseExited
+    private void staffButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_staffButtonMouseEntered
+        staffButton.setBackground(new Color(225, 225, 225));
+    }//GEN-LAST:event_staffButtonMouseEntered
 
-    private void stuffButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_stuffButtonMousePressed
-        stuffButton.setForeground(new Color(255, 255, 255));
-    }//GEN-LAST:event_stuffButtonMousePressed
+    private void staffButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_staffButtonMouseExited
+        staffButton.setBackground(new Color(255, 255, 255));
+    }//GEN-LAST:event_staffButtonMouseExited
 
-    private void stuffButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_stuffButtonMouseReleased
-        stuffButton.setForeground(new Color(51, 51, 51));
-    }//GEN-LAST:event_stuffButtonMouseReleased
+    private void staffButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_staffButtonMousePressed
+        staffButton.setForeground(new Color(255, 255, 255));
+    }//GEN-LAST:event_staffButtonMousePressed
+
+    private void staffButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_staffButtonMouseReleased
+        staffButton.setForeground(new Color(51, 51, 51));
+    }//GEN-LAST:event_staffButtonMouseReleased
 
     private void vehiclesButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vehiclesButtonMouseClicked
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_vehiclesButtonMouseClicked
 
     private void vehiclesButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vehiclesButtonMouseEntered
@@ -237,7 +235,8 @@ public class MenuButton extends javax.swing.JPanel {
     }//GEN-LAST:event_vehiclesButtonMouseReleased
 
     private void logoutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseClicked
-        // TODO add your handling code here:
+        //MechanicalWorkshop.loginUI.setVisible(true);
+        //MechanicalWorkshop.loginUI.dashboardFrame.setVisible(false);
     }//GEN-LAST:event_logoutButtonMouseClicked
 
     private void logoutButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseEntered
@@ -256,11 +255,10 @@ public class MenuButton extends javax.swing.JPanel {
         logoutButton.setForeground(new Color(51, 51, 51));
     }//GEN-LAST:event_logoutButtonMouseReleased
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton dashboardButton;
     private javax.swing.JButton logoutButton;
-    private javax.swing.JButton stuffButton;
+    private javax.swing.JButton staffButton;
     private javax.swing.JButton vehiclesButton;
     // End of variables declaration//GEN-END:variables
 }

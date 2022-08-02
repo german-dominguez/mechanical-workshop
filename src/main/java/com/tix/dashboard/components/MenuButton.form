@@ -22,7 +22,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="dashboardButton" max="32767" attributes="0"/>
-          <Component id="stuffButton" pref="130" max="32767" attributes="0"/>
+          <Component id="staffButton" pref="130" max="32767" attributes="0"/>
           <Component id="vehiclesButton" alignment="0" pref="130" max="32767" attributes="0"/>
           <Component id="logoutButton" alignment="0" pref="130" max="32767" attributes="0"/>
       </Group>
@@ -33,7 +33,7 @@
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Component id="dashboardButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="stuffButton" min="-2" max="-2" attributes="0"/>
+              <Component id="staffButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="vehiclesButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -80,7 +80,7 @@
         <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="dashboardButtonMouseReleased"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="stuffButton">
+    <Component class="javax.swing.JButton" name="staffButton">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -94,7 +94,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/com/tix/images/dashboard/2.png"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Stuff"/>
+        <Property name="text" type="java.lang.String" value="Staff"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
             <EmptyBorder bottom="1" left="20" right="1" top="1"/>
@@ -109,11 +109,11 @@
         <Property name="iconTextGap" type="int" value="10"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="stuffButtonMouseClicked"/>
-        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="stuffButtonMouseEntered"/>
-        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="stuffButtonMouseExited"/>
-        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="stuffButtonMousePressed"/>
-        <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="stuffButtonMouseReleased"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="staffButtonMouseClicked"/>
+        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="staffButtonMouseEntered"/>
+        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="staffButtonMouseExited"/>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="staffButtonMousePressed"/>
+        <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="staffButtonMouseReleased"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="vehiclesButton">

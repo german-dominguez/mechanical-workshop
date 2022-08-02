@@ -35,16 +35,22 @@ public class DashboardFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         backgroundPanel = new javax.swing.JPanel();
+        menu2 = new com.tix.dashboard.components.Menu();
+        formPanel = new javax.swing.JPanel();
         headerPanel = new javax.swing.JPanel();
         exitButton = new javax.swing.JButton();
-        menu2 = new com.tix.dashboard.components.Menu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(new java.awt.FlowLayout());
 
         backgroundPanel.setBackground(new java.awt.Color(255, 255, 255));
         backgroundPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        backgroundPanel.add(menu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
+
+        formPanel.setBackground(new java.awt.Color(255, 255, 255));
+        formPanel.setLayout(new java.awt.BorderLayout());
+        backgroundPanel.add(formPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 800, 450));
 
         headerPanel.setBackground(new java.awt.Color(255, 255, 255));
         headerPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -94,9 +100,8 @@ public class DashboardFrame extends javax.swing.JFrame {
         );
 
         backgroundPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 40));
-        backgroundPanel.add(menu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
 
-        getContentPane().add(backgroundPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 500));
+        getContentPane().add(backgroundPanel);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -127,9 +132,10 @@ public class DashboardFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_headerPanelMouseDragged
 
     public void showForm(Component component) {
-        //formPanel.removeAll();
-        //formPanel.revalidate();
-        //formPanel.repaint();
+        formPanel.removeAll();
+        formPanel.revalidate();
+        formPanel.add(component);
+        formPanel.repaint();
     }
     
     private void setImageLabel(JLabel jLabel, String path){
@@ -143,6 +149,7 @@ public class DashboardFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel backgroundPanel;
     private javax.swing.JButton exitButton;
+    private javax.swing.JPanel formPanel;
     private javax.swing.JPanel headerPanel;
     private com.tix.dashboard.components.Menu menu2;
     // End of variables declaration//GEN-END:variables

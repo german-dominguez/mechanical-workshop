@@ -47,6 +47,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <exec.mainClass>com.tix.main.MechanicalWorkshop</exec.mainClass>
+        <exec.mainClass>com.tix.main.Main</exec.mainClass>
     </properties>
 </project>

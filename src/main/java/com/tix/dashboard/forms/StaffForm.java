@@ -20,7 +20,7 @@ public class StaffForm extends javax.swing.JPanel {
         table = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLayout(new java.awt.BorderLayout());
 
         scroll.setBackground(new java.awt.Color(255, 255, 255));
         scroll.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -74,14 +74,14 @@ public class StaffForm extends javax.swing.JPanel {
         table.setOpaque(false);
         table.setRowHeight(30);
         table.setRowMargin(2);
-        table.setSelectionBackground(new java.awt.Color(102, 153, 255));
+        table.setSelectionBackground(new java.awt.Color(209, 232, 255));
+        table.setSelectionForeground(new java.awt.Color(51, 51, 51));
         table.setShowGrid(false);
-        table.setShowHorizontalLines(false);
         table.getTableHeader().setResizingAllowed(false);
         table.getTableHeader().setReorderingAllowed(false);
         scroll.setViewportView(table);
 
-        add(scroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 27, 820, 390));
+        add(scroll, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void tableHeaderRenderer() {
@@ -95,7 +95,6 @@ public class StaffForm extends javax.swing.JPanel {
 
     private void customTableCellRenderer() {
         DefaultTableCellRenderer renderer = new DefaultTableCellRenderer();
-
         renderer.setHorizontalAlignment(JLabel.CENTER);
         for (int i = 0; i < table.getColumnCount(); i++) {
             table.getColumnModel().getColumn(i).setCellRenderer(renderer);
