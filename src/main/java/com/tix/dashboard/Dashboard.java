@@ -37,7 +37,7 @@ public class Dashboard extends javax.swing.JPanel {
 
         formPanel.setBackground(new java.awt.Color(255, 255, 255));
         formPanel.setLayout(new java.awt.BorderLayout());
-        add(formPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 750, 450));
+        add(formPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 720, 410));
         add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
