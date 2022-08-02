@@ -4,7 +4,7 @@
  */
 package com.tix.login;
 
-import com.tix.dashboard.DashboardFrame;
+import com.tix.dashboard.Dashboard;
 import com.tix.main.Main;
 import java.awt.Color;
 
@@ -16,8 +16,10 @@ public class Login extends javax.swing.JPanel {
 
     /**
      * Creates new form Login
+     *
+     * @param main
      */
-    public Login() {
+    public Login(Main main) {
         initComponents();
     }
 
@@ -40,7 +42,6 @@ public class Login extends javax.swing.JPanel {
         passwordLabel = new javax.swing.JLabel();
         passwordSeparator = new javax.swing.JSeparator();
         passwordField = new javax.swing.JPasswordField();
-        loginButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -134,27 +135,6 @@ public class Login extends javax.swing.JPanel {
             }
         });
         add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 302, 390, 30));
-
-        loginButton.setBackground(new java.awt.Color(0, 134, 190));
-        loginButton.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        loginButton.setForeground(new java.awt.Color(255, 255, 255));
-        loginButton.setText("NEXT");
-        loginButton.setBorder(null);
-        loginButton.setBorderPainted(false);
-        loginButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        loginButton.setFocusable(false);
-        loginButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                loginButtonMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                loginButtonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                loginButtonMouseExited(evt);
-            }
-        });
-        add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 140, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButtonMouseClicked
@@ -204,25 +184,11 @@ public class Login extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_passwordFieldMousePressed
 
-    private void loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseClicked
-        
-    }//GEN-LAST:event_loginButtonMouseClicked
-
-    private void loginButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseEntered
-        loginButton.setBackground(new Color(45, 158, 219));
-    }//GEN-LAST:event_loginButtonMouseEntered
-
-    private void loginButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseExited
-        loginButton.setBackground(new Color(0, 124, 190));
-    }//GEN-LAST:event_loginButtonMouseExited
-
-    
     private int xMouse, yMouse;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel backgroundLabel;
     private javax.swing.JButton exitButton;
     private javax.swing.JPanel header;
-    private javax.swing.JButton loginButton;
     private javax.swing.JPasswordField passwordField;
     private javax.swing.JLabel passwordLabel;
     private javax.swing.JSeparator passwordSeparator;

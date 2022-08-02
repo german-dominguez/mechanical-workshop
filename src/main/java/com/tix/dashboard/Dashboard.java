@@ -1,28 +1,23 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package com.tix.dashboard;
 
+import com.tix.main.Main;
 import java.awt.Color;
-import java.awt.Component;
-import java.awt.Image;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import rsscalelabel.RSScaleLabel;
+
 /**
  *
  * @author Germanchoo
  */
-public class DashboardFrame extends javax.swing.JFrame {
+public class Dashboard extends javax.swing.JPanel {
 
     /**
-     * Creates new form DashboardFrame
+     * Creates new form Dashboard
      */
-    public DashboardFrame() {
+    public Dashboard() {
         initComponents();
-        setLocationRelativeTo(null);
     }
 
     /**
@@ -34,23 +29,12 @@ public class DashboardFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        backgroundPanel = new javax.swing.JPanel();
-        menu2 = new com.tix.dashboard.components.Menu();
-        formPanel = new javax.swing.JPanel();
         headerPanel = new javax.swing.JPanel();
         exitButton = new javax.swing.JButton();
+        menu1 = new com.tix.dashboard.components.Menu();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
-        getContentPane().setLayout(new java.awt.FlowLayout());
-
-        backgroundPanel.setBackground(new java.awt.Color(255, 255, 255));
-        backgroundPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        backgroundPanel.add(menu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
-
-        formPanel.setBackground(new java.awt.Color(255, 255, 255));
-        formPanel.setLayout(new java.awt.BorderLayout());
-        backgroundPanel.add(formPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 800, 450));
+        setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         headerPanel.setBackground(new java.awt.Color(255, 255, 255));
         headerPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -89,7 +73,7 @@ public class DashboardFrame extends javax.swing.JFrame {
         headerPanelLayout.setHorizontalGroup(
             headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
-                .addContainerGap(960, Short.MAX_VALUE)
+                .addContainerGap(860, Short.MAX_VALUE)
                 .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         headerPanelLayout.setVerticalGroup(
@@ -99,11 +83,8 @@ public class DashboardFrame extends javax.swing.JFrame {
                 .addGap(17, 17, 17))
         );
 
-        backgroundPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 40));
-
-        getContentPane().add(backgroundPanel);
-
-        pack();
+        add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 40));
+        add(menu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 240));
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButtonMouseClicked
@@ -120,37 +101,21 @@ public class DashboardFrame extends javax.swing.JFrame {
         exitButton.setForeground(Color.black);
     }//GEN-LAST:event_exitButtonMouseExited
 
-    private void headerPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerPanelMousePressed
-        xMouse = evt.getX();
-        yMouse = evt.getY();
-    }//GEN-LAST:event_headerPanelMousePressed
-
     private void headerPanelMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerPanelMouseDragged
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
         this.setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_headerPanelMouseDragged
 
-    public void showForm(Component component) {
-        formPanel.removeAll();
-        formPanel.revalidate();
-        formPanel.add(component);
-        formPanel.repaint();
-    }
-    
-    private void setImageLabel(JLabel jLabel, String path){
-        ImageIcon image = new ImageIcon(path);
-        Icon icon = new ImageIcon(image.getImage().getScaledInstance(jLabel.getWidth(), jLabel.getHeight(), Image.SCALE_DEFAULT));
-        jLabel.setIcon(icon);
-        this.repaint();
-    }
-    
+    private void headerPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerPanelMousePressed
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_headerPanelMousePressed
+
     private int xMouse, yMouse;
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel backgroundPanel;
     private javax.swing.JButton exitButton;
-    private javax.swing.JPanel formPanel;
     private javax.swing.JPanel headerPanel;
-    private com.tix.dashboard.components.Menu menu2;
+    private com.tix.dashboard.components.Menu menu1;
     // End of variables declaration//GEN-END:variables
 }

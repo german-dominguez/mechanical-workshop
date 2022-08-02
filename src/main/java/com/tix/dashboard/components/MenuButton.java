@@ -4,6 +4,8 @@
  */
 package com.tix.dashboard.components;
 
+import com.tix.login.Login;
+import com.tix.main.Main;
 import java.awt.Color;
 
 /**
@@ -31,7 +33,6 @@ public class MenuButton extends javax.swing.JPanel {
         dashboardButton = new javax.swing.JButton();
         staffButton = new javax.swing.JButton();
         vehiclesButton = new javax.swing.JButton();
-        logoutButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -122,35 +123,6 @@ public class MenuButton extends javax.swing.JPanel {
             }
         });
 
-        logoutButton.setBackground(new java.awt.Color(255, 255, 255));
-        logoutButton.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
-        logoutButton.setForeground(new java.awt.Color(51, 51, 51));
-        logoutButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/tix/images/dashboard/key.png"))); // NOI18N
-        logoutButton.setText("Log out");
-        logoutButton.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 1));
-        logoutButton.setBorderPainted(false);
-        logoutButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        logoutButton.setFocusable(false);
-        logoutButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        logoutButton.setIconTextGap(10);
-        logoutButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                logoutButtonMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                logoutButtonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                logoutButtonMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                logoutButtonMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                logoutButtonMouseReleased(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -158,7 +130,6 @@ public class MenuButton extends javax.swing.JPanel {
             .addComponent(dashboardButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(staffButton, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
             .addComponent(vehiclesButton, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-            .addComponent(logoutButton, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,9 +140,7 @@ public class MenuButton extends javax.swing.JPanel {
                 .addComponent(staffButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(vehiclesButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(logoutButton)
-                .addContainerGap(175, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -234,30 +203,12 @@ public class MenuButton extends javax.swing.JPanel {
         vehiclesButton.setForeground(new Color(51, 51, 51));
     }//GEN-LAST:event_vehiclesButtonMouseReleased
 
-    private void logoutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseClicked
-        //MechanicalWorkshop.loginUI.setVisible(true);
-        //MechanicalWorkshop.loginUI.dashboardFrame.setVisible(false);
-    }//GEN-LAST:event_logoutButtonMouseClicked
-
-    private void logoutButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseEntered
-        logoutButton.setBackground(new Color(225, 225, 225));
-    }//GEN-LAST:event_logoutButtonMouseEntered
-
-    private void logoutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseExited
-        logoutButton.setBackground(new Color(255, 255, 255));
-    }//GEN-LAST:event_logoutButtonMouseExited
-
-    private void logoutButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMousePressed
-        logoutButton.setForeground(new Color(255, 255, 255));
-    }//GEN-LAST:event_logoutButtonMousePressed
-
-    private void logoutButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseReleased
-        logoutButton.setForeground(new Color(51, 51, 51));
-    }//GEN-LAST:event_logoutButtonMouseReleased
-
+    private void logoutButtonMouseClicked(java.awt.event.MouseEvent evt, Main main){
+        main.setContentPane(new Login(main));
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton dashboardButton;
-    private javax.swing.JButton logoutButton;
     private javax.swing.JButton staffButton;
     private javax.swing.JButton vehiclesButton;
     // End of variables declaration//GEN-END:variables
