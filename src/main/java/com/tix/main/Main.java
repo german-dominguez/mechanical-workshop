@@ -5,6 +5,10 @@
 package com.tix.main;
 
 import com.tix.dashboard.Dashboard;
+import com.tix.dashboard.event.MenuEvent;
+import com.tix.dashboard.forms.HomeForm;
+import com.tix.dashboard.forms.StaffForm;
+import com.tix.dashboard.forms.VehiclesForm;
 import com.tix.login.Login;
 import java.awt.Color;
 import javax.swing.JPanel;
@@ -20,10 +24,27 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
-        setSize(800, 510);
-        setLocationRelativeTo(this);
-        setContentPane(new Login(this));
-        getContentPane().add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 140, 40));
+
+        setLocationRelativeTo(null);
+        setLayout(null);
+        showFrame(login, 800, 450, 0);
+
+        login.addEventMenuSelected((int index) -> {
+            showFrame(dashboard, 900, 500, 860);
+        });
+
+        dashboard.addEventMenuSelected((int index) -> {
+            switch (index) {
+                case 0 ->
+                    dashboard.showForm(homeForm);
+                case 1 ->
+                    dashboard.showForm(staffForm);
+                case 2 ->
+                    dashboard.showForm(vehiclesForm);
+                case 3 ->
+                    showFrame(login, 800, 450, 0);
+            }
+        });
     }
 
     /**
@@ -35,94 +56,85 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        loginButton = new javax.swing.JButton();
-        logoutButton = new javax.swing.JButton();
+        headerPanel = new javax.swing.JPanel();
+        exitButton = new javax.swing.JButton();
+        mainPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setSize(new java.awt.Dimension(852, 480));
+        setResizable(false);
+        setSize(new java.awt.Dimension(800, 480));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        loginButton.setBackground(new java.awt.Color(0, 134, 190));
-        loginButton.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N
-        loginButton.setForeground(new java.awt.Color(255, 255, 255));
-        loginButton.setText("NEXT");
-        loginButton.setBorder(null);
-        loginButton.setBorderPainted(false);
-        loginButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        loginButton.setFocusable(false);
-        loginButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                loginButtonMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                loginButtonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                loginButtonMouseExited(evt);
+        headerPanel.setBackground(new java.awt.Color(255, 255, 255));
+        headerPanel.setOpaque(false);
+        headerPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                headerPanelMouseDragged(evt);
             }
         });
-        getContentPane().add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 140, 40));
-
-        logoutButton.setBackground(new java.awt.Color(255, 255, 255));
-        logoutButton.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
-        logoutButton.setForeground(new java.awt.Color(51, 51, 51));
-        logoutButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/tix/images/dashboard/key.png"))); // NOI18N
-        logoutButton.setText("Log out");
-        logoutButton.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 1));
-        logoutButton.setBorderPainted(false);
-        logoutButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        logoutButton.setFocusable(false);
-        logoutButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        logoutButton.setIconTextGap(10);
-        logoutButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                logoutButtonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                logoutButtonMouseExited(evt);
-            }
+        headerPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                logoutButtonMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                logoutButtonMouseReleased(evt);
+                headerPanelMousePressed(evt);
             }
         });
-        getContentPane().add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 130, -1));
+        headerPanel.setLayout(null);
+
+        exitButton.setBackground(new java.awt.Color(255, 255, 255));
+        exitButton.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        exitButton.setForeground(new java.awt.Color(0, 0, 0));
+        exitButton.setText("X");
+        exitButton.setBorder(null);
+        exitButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        exitButton.setFocusPainted(false);
+        exitButton.setFocusable(false);
+        exitButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exitButtonMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                exitButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                exitButtonMouseExited(evt);
+            }
+        });
+        headerPanel.add(exitButton);
+        exitButton.setBounds(0, 0, 40, 40);
+
+        getContentPane().add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 40));
+
+        mainPanel.setBackground(new java.awt.Color(255, 255, 255));
+        mainPanel.setLayout(new java.awt.BorderLayout());
+        getContentPane().add(mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void loginButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseEntered
-        loginButton.setBackground(new Color(45, 158, 219));
-    }//GEN-LAST:event_loginButtonMouseEntered
+    private void exitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButtonMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_exitButtonMouseClicked
 
-    private void loginButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseExited
-        loginButton.setBackground(new Color(0, 124, 190));
-    }//GEN-LAST:event_loginButtonMouseExited
+    private void exitButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButtonMouseEntered
+        exitButton.setBackground(Color.red);
+        exitButton.setForeground(Color.white);
+    }//GEN-LAST:event_exitButtonMouseEntered
 
-    private void loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseClicked
-        setSize(900,500);
-        setContentPane(new Dashboard());
-        getContentPane().add(logoutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 130, -1));
-    }//GEN-LAST:event_loginButtonMouseClicked
+    private void exitButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButtonMouseExited
+        exitButton.setBackground(Color.white);
+        exitButton.setForeground(Color.black);
+    }//GEN-LAST:event_exitButtonMouseExited
 
-    private void logoutButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseEntered
-        logoutButton.setBackground(new Color(225, 225, 225));
-    }//GEN-LAST:event_logoutButtonMouseEntered
+    private void headerPanelMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerPanelMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_headerPanelMouseDragged
 
-    private void logoutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseExited
-        logoutButton.setBackground(new Color(255, 255, 255));
-    }//GEN-LAST:event_logoutButtonMouseExited
-
-    private void logoutButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMousePressed
-        logoutButton.setForeground(new Color(255, 255, 255));
-    }//GEN-LAST:event_logoutButtonMousePressed
-
-    private void logoutButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseReleased
-        logoutButton.setForeground(new Color(51, 51, 51));
-    }//GEN-LAST:event_logoutButtonMouseReleased
+    private void headerPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerPanelMousePressed
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_headerPanelMousePressed
 
     /**
      * @param args the command line arguments
@@ -156,9 +168,33 @@ public class Main extends javax.swing.JFrame {
             new Main().setVisible(true);
         });
     }
-    
+
+    private void showFrame(JPanel panel, int width, int height, int exitButtonAlignment) {
+        setSize(width, height);
+        headerPanel.setSize(width, 40);
+        mainPanel.setSize(width, height);
+        exitButton.setBounds(exitButtonAlignment, 0, 40, 40);
+        mainPanel.removeAll();
+        mainPanel.add(panel);
+        mainPanel.repaint();
+        mainPanel.revalidate();
+    }
+
+    public void addEventMenuSelected(MenuEvent event) {
+        this.event = event;
+        login.addEventMenuSelected(event);
+    }
+
+    private final VehiclesForm vehiclesForm = new VehiclesForm();
+    private StaffForm staffForm = new StaffForm();
+    private HomeForm homeForm = new HomeForm();
+    private final Login login = new Login();
+    private Dashboard dashboard = new Dashboard();
+    private MenuEvent event;
+    private int xMouse, yMouse;
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton loginButton;
-    private javax.swing.JButton logoutButton;
+    private javax.swing.JButton exitButton;
+    private javax.swing.JPanel headerPanel;
+    private javax.swing.JPanel mainPanel;
     // End of variables declaration//GEN-END:variables
 }
