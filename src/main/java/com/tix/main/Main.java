@@ -4,13 +4,14 @@
  */
 package com.tix.main;
 
-import com.tix.dashboard.Dashboard;
-import com.tix.dashboard.event.MenuEvent;
-import com.tix.dashboard.forms.HomeForm;
-import com.tix.dashboard.forms.StaffForm;
-import com.tix.dashboard.forms.VehiclesForm;
+import com.tix.dashboard.Home;
+import com.tix.event.MenuEvent;
+import com.tix.home.forms.HomeForm;
+import com.tix.home.staff.StaffForm;
+import com.tix.home.forms.VehiclesForm;
+import com.tix.home.staff.RegisterForm;
+import com.tix.event.ButtonEvent;
 import com.tix.login.Login;
-import java.awt.Color;
 import javax.swing.JPanel;
 
 /**
@@ -23,6 +24,13 @@ public class Main extends javax.swing.JFrame {
      * Creates new form Main
      */
     public Main() {
+        this.home = new Home();
+        this.login = new Login();
+        this.homeForm = new HomeForm();
+        this.staffForm = new StaffForm();
+        this.registerForm = new RegisterForm();
+        this.vehiclesForm = new VehiclesForm();
+
         initComponents();
 
         setLocationRelativeTo(null);
@@ -30,19 +38,26 @@ public class Main extends javax.swing.JFrame {
         showFrame(login, 800, 450, 0);
 
         login.addEventMenuSelected((int index) -> {
-            showFrame(dashboard, 900, 500, 860);
+            showFrame(home, 900, 500, 860);
         });
 
-        dashboard.addEventMenuSelected((int index) -> {
+        home.addEventMenuSelected((int index) -> {
             switch (index) {
                 case 0 ->
-                    dashboard.showForm(homeForm);
+                    home.showForm(homeForm);
                 case 1 ->
-                    dashboard.showForm(staffForm);
+                    home.showForm(staffForm);
                 case 2 ->
-                    dashboard.showForm(vehiclesForm);
+                    home.showForm(vehiclesForm);
                 case 3 ->
                     showFrame(login, 800, 450, 0);
+            }
+        });
+
+        staffForm.addEventButtonSelected((int index) -> {
+            switch (index) {
+                case 0 ->
+                    home.showForm(registerForm);
             }
         });
     }
@@ -56,8 +71,7 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        headerPanel = new javax.swing.JPanel();
-        exitButton = new javax.swing.JButton();
+        header = new com.tix.main.Header();
         mainPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -66,43 +80,17 @@ public class Main extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(800, 480));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        headerPanel.setBackground(new java.awt.Color(255, 255, 255));
-        headerPanel.setOpaque(false);
-        headerPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
-                headerPanelMouseDragged(evt);
+                headerMouseDragged(evt);
             }
         });
-        headerPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+        header.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                headerPanelMousePressed(evt);
+                headerMousePressed(evt);
             }
         });
-        headerPanel.setLayout(null);
-
-        exitButton.setBackground(new java.awt.Color(255, 255, 255));
-        exitButton.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        exitButton.setForeground(new java.awt.Color(0, 0, 0));
-        exitButton.setText("X");
-        exitButton.setBorder(null);
-        exitButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        exitButton.setFocusPainted(false);
-        exitButton.setFocusable(false);
-        exitButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                exitButtonMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                exitButtonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                exitButtonMouseExited(evt);
-            }
-        });
-        headerPanel.add(exitButton);
-        exitButton.setBounds(0, 0, 40, 40);
-
-        getContentPane().add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 40));
+        getContentPane().add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 40));
 
         mainPanel.setBackground(new java.awt.Color(255, 255, 255));
         mainPanel.setLayout(new java.awt.BorderLayout());
@@ -111,30 +99,16 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void exitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButtonMouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_exitButtonMouseClicked
+    private void headerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerMousePressed
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_headerMousePressed
 
-    private void exitButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButtonMouseEntered
-        exitButton.setBackground(Color.red);
-        exitButton.setForeground(Color.white);
-    }//GEN-LAST:event_exitButtonMouseEntered
-
-    private void exitButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButtonMouseExited
-        exitButton.setBackground(Color.white);
-        exitButton.setForeground(Color.black);
-    }//GEN-LAST:event_exitButtonMouseExited
-
-    private void headerPanelMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerPanelMouseDragged
+    private void headerMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerMouseDragged
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
         this.setLocation(x - xMouse, y - yMouse);
-    }//GEN-LAST:event_headerPanelMouseDragged
-
-    private void headerPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerPanelMousePressed
-        xMouse = evt.getX();
-        yMouse = evt.getY();
-    }//GEN-LAST:event_headerPanelMousePressed
+    }//GEN-LAST:event_headerMouseDragged
 
     /**
      * @param args the command line arguments
@@ -171,9 +145,9 @@ public class Main extends javax.swing.JFrame {
 
     private void showFrame(JPanel panel, int width, int height, int exitButtonAlignment) {
         setSize(width, height);
-        headerPanel.setSize(width, 40);
+        header.setSize(width, 40);
         mainPanel.setSize(width, height);
-        exitButton.setBounds(exitButtonAlignment, 0, 40, 40);
+        header.getExitButton().setBounds(exitButtonAlignment, 0, 40, 40);
         mainPanel.removeAll();
         mainPanel.add(panel);
         mainPanel.repaint();
@@ -184,17 +158,24 @@ public class Main extends javax.swing.JFrame {
         this.event = event;
         login.addEventMenuSelected(event);
     }
-
-    private final VehiclesForm vehiclesForm = new VehiclesForm();
-    private StaffForm staffForm = new StaffForm();
-    private HomeForm homeForm = new HomeForm();
-    private final Login login = new Login();
-    private Dashboard dashboard = new Dashboard();
     private MenuEvent event;
+
+    public void addEventButtonSelected(ButtonEvent buttonEvent) {
+        this.buttonEvent = buttonEvent;
+        staffForm.addEventButtonSelected(buttonEvent);
+    }
+    private ButtonEvent buttonEvent;
+
+    private final VehiclesForm vehiclesForm;
+    private StaffForm staffForm;
+    private RegisterForm registerForm;
+    private HomeForm homeForm;
+    private final Login login;
+    private Home home;
+
     private int xMouse, yMouse;
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton exitButton;
-    private javax.swing.JPanel headerPanel;
+    private com.tix.main.Header header;
     private javax.swing.JPanel mainPanel;
     // End of variables declaration//GEN-END:variables
 }

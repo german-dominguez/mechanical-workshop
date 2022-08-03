@@ -1,6 +1,6 @@
-package com.tix.dashboard.components;
+package com.tix.dashboard;
 
-import com.tix.dashboard.event.MenuEvent;
+import com.tix.event.MenuEvent;
 
 public final class Menu extends javax.swing.JPanel {
 
@@ -13,7 +13,7 @@ public final class Menu extends javax.swing.JPanel {
     private void initComponents() {
 
         profileLabel = new javax.swing.JLabel();
-        menuButton = new com.tix.dashboard.components.MenuButton();
+        menuButton = new com.tix.dashboard.MenuButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(150, 500));
@@ -33,7 +33,7 @@ public final class Menu extends javax.swing.JPanel {
     
     private MenuEvent event;
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.tix.dashboard.components.MenuButton menuButton;
+    private com.tix.dashboard.MenuButton menuButton;
     private javax.swing.JLabel profileLabel;
     // End of variables declaration//GEN-END:variables
 }

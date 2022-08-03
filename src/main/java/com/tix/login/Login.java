@@ -4,7 +4,7 @@
  */
 package com.tix.login;
 
-import com.tix.dashboard.event.MenuEvent;
+import com.tix.event.MenuEvent;
 import java.awt.Color;
 
 /**
@@ -148,7 +148,7 @@ public class Login extends javax.swing.JPanel {
     }
 
     private MenuEvent event;
-    private int xMouse, yMouse;
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel backgroundLabel;
     private javax.swing.JButton loginButton;

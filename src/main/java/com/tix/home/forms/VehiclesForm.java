@@ -1,4 +1,4 @@
-package com.tix.dashboard.forms;
+package com.tix.home.forms;
 
 public class VehiclesForm extends javax.swing.JPanel {
 

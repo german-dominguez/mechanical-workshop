@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package com.tix.dashboard.components;
+package com.tix.dashboard;
 
-import com.tix.dashboard.event.MenuEvent;
+import com.tix.event.MenuEvent;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JButton;
@@ -181,9 +181,9 @@ public class MenuButton extends javax.swing.JPanel {
     public void addEventMenuSelected(MenuEvent event) {
         this.event = event;
     }
+    private MenuEvent event;
 
     private ArrayList<JButton> buttons = new ArrayList<>();
-    private MenuEvent event;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton dashboardButton;
     private javax.swing.JButton logoutButton;

@@ -4,19 +4,19 @@
  */
 package com.tix.dashboard;
 
-import com.tix.dashboard.event.MenuEvent;
+import com.tix.event.MenuEvent;
 import javax.swing.JPanel;
 
 /**
  *
  * @author Germanchoo
  */
-public class Dashboard extends javax.swing.JPanel {
+public class Home extends javax.swing.JPanel {
 
     /**
      * Creates new form Dashboard
      */
-    public Dashboard() {
+    public Home() {
         initComponents();
     }
 
@@ -30,21 +30,16 @@ public class Dashboard extends javax.swing.JPanel {
     private void initComponents() {
 
         formPanel = new javax.swing.JPanel();
-        menu = new com.tix.dashboard.components.Menu();
+        menu = new com.tix.dashboard.Menu();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         formPanel.setBackground(new java.awt.Color(255, 255, 255));
         formPanel.setLayout(new java.awt.BorderLayout());
-        add(formPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 720, 410));
+        add(formPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 740, 450));
         add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
-
-    public void addEventMenuSelected(MenuEvent event) {
-        this.event = event;
-        menu.addEventMenuSelected(event);
-    }
 
     public void showForm(JPanel panel) {
         formPanel.removeAll();
@@ -53,10 +48,15 @@ public class Dashboard extends javax.swing.JPanel {
         formPanel.revalidate();
     }
 
+    public void addEventMenuSelected(MenuEvent event) {
+        this.event = event;
+        menu.addEventMenuSelected(event);
+    }
     private MenuEvent event;
+
     private int xMouse, yMouse;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel formPanel;
-    private com.tix.dashboard.components.Menu menu;
+    private com.tix.dashboard.Menu menu;
     // End of variables declaration//GEN-END:variables
 }

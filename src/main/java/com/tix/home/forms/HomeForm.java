@@ -1,4 +1,4 @@
-package com.tix.dashboard.forms;
+package com.tix.home.forms;
 
 public class HomeForm extends javax.swing.JPanel {
 
