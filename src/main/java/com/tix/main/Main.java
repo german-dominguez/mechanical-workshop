@@ -148,11 +148,11 @@ public class Main extends javax.swing.JFrame {
         mainPanel.revalidate();
     }
 
-    private final VehiclesForm vehiclesForm;
+    private VehiclesForm vehiclesForm;
     private StaffForm staffForm;
     private RegisterForm registerForm;
     private HomeForm homeForm;
-    private final Login login;
+    private Login login;
     private Home home;
 
     private int xMouse, yMouse;

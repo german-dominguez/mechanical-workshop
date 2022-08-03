@@ -18,6 +18,8 @@ public class Login extends javax.swing.JPanel {
      *
      */
     public Login() {
+        this.PASSWORD = "*************";
+        this.USER = "Enter your username";
         initComponents();
     }
 
@@ -110,23 +112,23 @@ public class Login extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void userTextFieldMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userTextFieldMousePressed
-        if (userTextField.getText().equals("Enter your username")) {
+        if (userTextField.getText().equals(USER)) {
             userTextField.setText("");
             userTextField.setForeground(Color.black);
         }
         if (String.valueOf(passwordField.getPassword()).isEmpty()) {
-            passwordField.setText("*************");
+            passwordField.setText(PASSWORD);
             passwordField.setForeground(Color.gray);
         }
     }//GEN-LAST:event_userTextFieldMousePressed
 
     private void passwordFieldMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passwordFieldMousePressed
-        if (String.valueOf(passwordField.getPassword()).equals("*************")) {
+        if (String.valueOf(passwordField.getPassword()).equals(PASSWORD)) {
             passwordField.setText("");
             passwordField.setForeground(Color.black);
         }
         if (userTextField.getText().isEmpty()) {
-            userTextField.setText("Enter your username");
+            userTextField.setText(USER);
             userTextField.setForeground(Color.gray);
         }
     }//GEN-LAST:event_passwordFieldMousePressed
@@ -141,13 +143,16 @@ public class Login extends javax.swing.JPanel {
 
     private void loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseClicked
         event.buttonSelected(0);
+        loginButtonMouseExited(evt);
     }//GEN-LAST:event_loginButtonMouseClicked
 
-    public void addButtonSelectedEvent(ButtonEvent event){
+    public void addButtonSelectedEvent(ButtonEvent event) {
         this.event = event;
     }
-    
     private ButtonEvent event;
+
+    private final String PASSWORD;
+    private final String USER;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel backgroundLabel;

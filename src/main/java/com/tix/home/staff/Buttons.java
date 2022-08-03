@@ -127,6 +127,7 @@ public class Buttons extends javax.swing.JPanel {
     private void buttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonMouseClicked
         int index = buttons.indexOf(evt.getSource());
         event.buttonSelected(index + 5);
+        buttonMouseExited(evt);
     }//GEN-LAST:event_buttonMouseClicked
 
     public void addButtonSelectedEvent(ButtonEvent event) {
