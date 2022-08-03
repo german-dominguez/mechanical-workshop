@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package com.tix.dashboard;
+package com.tix.home;
 
-import com.tix.event.MenuEvent;
 import javax.swing.JPanel;
+import com.tix.event.ButtonEvent;
 
 /**
  *
@@ -30,7 +30,7 @@ public class Home extends javax.swing.JPanel {
     private void initComponents() {
 
         formPanel = new javax.swing.JPanel();
-        menu = new com.tix.dashboard.Menu();
+        menu = new com.tix.home.Menu();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -47,16 +47,16 @@ public class Home extends javax.swing.JPanel {
         formPanel.repaint();
         formPanel.revalidate();
     }
-
-    public void addEventMenuSelected(MenuEvent event) {
+    
+    public void addButtonSelectedEvent(ButtonEvent event) {
         this.event = event;
-        menu.addEventMenuSelected(event);
+        menu.addButtonSelectedEvent(event);
     }
-    private MenuEvent event;
-
+    private ButtonEvent event;
+    
     private int xMouse, yMouse;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel formPanel;
-    private com.tix.dashboard.Menu menu;
+    private com.tix.home.Menu menu;
     // End of variables declaration//GEN-END:variables
 }

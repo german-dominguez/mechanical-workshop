@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package com.tix.dashboard;
+package com.tix.home;
 
-import com.tix.event.MenuEvent;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JButton;
+import com.tix.event.ButtonEvent;
 
 /**
  *
@@ -45,7 +45,7 @@ public class MenuButton extends javax.swing.JPanel {
         dashboardButton.setBackground(new java.awt.Color(255, 255, 255));
         dashboardButton.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         dashboardButton.setForeground(new java.awt.Color(51, 51, 51));
-        dashboardButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/tix/images/dashboard/1.png"))); // NOI18N
+        dashboardButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/tix/images/home/1.png"))); // NOI18N
         dashboardButton.setText("Dashboard");
         dashboardButton.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 1));
         dashboardButton.setBorderPainted(false);
@@ -68,7 +68,7 @@ public class MenuButton extends javax.swing.JPanel {
         staffButton.setBackground(new java.awt.Color(255, 255, 255));
         staffButton.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         staffButton.setForeground(new java.awt.Color(51, 51, 51));
-        staffButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/tix/images/dashboard/2.png"))); // NOI18N
+        staffButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/tix/images/home/2.png"))); // NOI18N
         staffButton.setText("Staff");
         staffButton.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 1));
         staffButton.setBorderPainted(false);
@@ -91,7 +91,7 @@ public class MenuButton extends javax.swing.JPanel {
         vehiclesButton.setBackground(new java.awt.Color(255, 255, 255));
         vehiclesButton.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         vehiclesButton.setForeground(new java.awt.Color(51, 51, 51));
-        vehiclesButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/tix/images/dashboard/3.png"))); // NOI18N
+        vehiclesButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/tix/images/home/3.png"))); // NOI18N
         vehiclesButton.setText("Vehicles");
         vehiclesButton.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 1));
         vehiclesButton.setBorderPainted(false);
@@ -114,7 +114,7 @@ public class MenuButton extends javax.swing.JPanel {
         logoutButton.setBackground(new java.awt.Color(255, 255, 255));
         logoutButton.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         logoutButton.setForeground(new java.awt.Color(51, 51, 51));
-        logoutButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/tix/images/dashboard/key.png"))); // NOI18N
+        logoutButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/tix/images/home/key.png"))); // NOI18N
         logoutButton.setText("Log out");
         logoutButton.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 1));
         logoutButton.setBorderPainted(false);
@@ -154,7 +154,7 @@ public class MenuButton extends javax.swing.JPanel {
                 .addComponent(vehiclesButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(logoutButton)
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -175,14 +175,15 @@ public class MenuButton extends javax.swing.JPanel {
     }//GEN-LAST:event_buttonMouseExited
 
     private void buttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonMouseClicked
-        event.menuSelected(buttons.indexOf(evt.getSource()));
+        int index = buttons.indexOf(evt.getSource());
+        event.buttonSelected(index + 1);
     }//GEN-LAST:event_buttonMouseClicked
-
-    public void addEventMenuSelected(MenuEvent event) {
+    
+    public void addButtonSelectedEvent(ButtonEvent event){
         this.event = event;
     }
-    private MenuEvent event;
-
+    private ButtonEvent event;
+    
     private ArrayList<JButton> buttons = new ArrayList<>();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton dashboardButton;

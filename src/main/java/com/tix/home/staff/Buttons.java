@@ -4,7 +4,6 @@
  */
 package com.tix.home.staff;
 
-import com.tix.event.MenuEvent;
 import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JButton;
@@ -55,10 +54,10 @@ public class Buttons extends javax.swing.JPanel {
                 buttonMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                newButtonMouseEntered(evt);
+                buttonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                newButtonMouseExited(evt);
+                buttonMouseExited(evt);
             }
         });
         add(newButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 110, 30));
@@ -76,10 +75,10 @@ public class Buttons extends javax.swing.JPanel {
                 buttonMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                editButtonMouseEntered(evt);
+                buttonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                editButtonMouseExited(evt);
+                buttonMouseExited(evt);
             }
         });
         add(editButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 110, 30));
@@ -97,44 +96,40 @@ public class Buttons extends javax.swing.JPanel {
                 buttonMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                deleteButtonMouseEntered(evt);
+                buttonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                deleteButtonMouseExited(evt);
+                buttonMouseExited(evt);
             }
         });
         add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 110, 30));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void newButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newButtonMouseEntered
-        newButton.setBackground(new Color(45, 158, 219));
-    }//GEN-LAST:event_newButtonMouseEntered
+    private void buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonMouseEntered
+        for (JButton button : buttons) {
+            if (evt.getSource().equals(button)) {
+                button.setBackground(new Color(45, 158, 219));
+                if (evt.getSource().equals(deleteButton)) {
+                    button.setBackground(new Color(255, 51, 51));
+                }
+            }
+        }
+    }//GEN-LAST:event_buttonMouseEntered
 
-    private void newButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newButtonMouseExited
-        newButton.setBackground(new Color(0, 124, 190));
-    }//GEN-LAST:event_newButtonMouseExited
-
-    private void editButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editButtonMouseEntered
-        editButton.setBackground(new Color(45, 158, 219));
-    }//GEN-LAST:event_editButtonMouseEntered
-
-    private void editButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editButtonMouseExited
-        editButton.setBackground(new Color(0, 124, 190));
-    }//GEN-LAST:event_editButtonMouseExited
-
-    private void deleteButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteButtonMouseEntered
-        deleteButton.setBackground(new Color(255, 51, 51));
-    }//GEN-LAST:event_deleteButtonMouseEntered
-
-    private void deleteButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteButtonMouseExited
-        deleteButton.setBackground(new Color(0, 124, 190));
-    }//GEN-LAST:event_deleteButtonMouseExited
+    private void buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonMouseExited
+        for (JButton button : buttons) {
+            if (evt.getSource().equals(button)) {
+                button.setBackground(new Color(0, 124, 190));
+            }
+        }
+    }//GEN-LAST:event_buttonMouseExited
 
     private void buttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonMouseClicked
-        event.buttonSelected(buttons.indexOf(evt.getSource()));
+        int index = buttons.indexOf(evt.getSource());
+        event.buttonSelected(index + 5);
     }//GEN-LAST:event_buttonMouseClicked
 
-    public void addEventButtonSelected(ButtonEvent event) {
+    public void addButtonSelectedEvent(ButtonEvent event) {
         this.event = event;
     }
     private ButtonEvent event;

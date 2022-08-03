@@ -4,15 +4,14 @@
  */
 package com.tix.main;
 
-import com.tix.dashboard.Home;
-import com.tix.event.MenuEvent;
+import com.tix.home.Home;
 import com.tix.home.forms.HomeForm;
 import com.tix.home.staff.StaffForm;
 import com.tix.home.forms.VehiclesForm;
 import com.tix.home.staff.RegisterForm;
-import com.tix.event.ButtonEvent;
 import com.tix.login.Login;
 import javax.swing.JPanel;
+import com.tix.event.ButtonEvent;
 
 /**
  *
@@ -32,34 +31,29 @@ public class Main extends javax.swing.JFrame {
         this.vehiclesForm = new VehiclesForm();
 
         initComponents();
-
         setLocationRelativeTo(null);
         setLayout(null);
         showFrame(login, 800, 450, 0);
 
-        login.addEventMenuSelected((int index) -> {
-            showFrame(home, 900, 500, 860);
-        });
-
-        home.addEventMenuSelected((int index) -> {
+        ButtonEvent event = (index) -> {
             switch (index) {
                 case 0 ->
-                    home.showForm(homeForm);
+                    showFrame(home, 900, 500, 860);
                 case 1 ->
-                    home.showForm(staffForm);
+                    home.showForm(homeForm);
                 case 2 ->
-                    home.showForm(vehiclesForm);
+                    home.showForm(staffForm);
                 case 3 ->
+                    home.showForm(vehiclesForm);
+                case 4 ->
                     showFrame(login, 800, 450, 0);
-            }
-        });
-
-        staffForm.addEventButtonSelected((int index) -> {
-            switch (index) {
-                case 0 ->
+                case 5 ->
                     home.showForm(registerForm);
             }
-        });
+        };
+        login.addButtonSelectedEvent(event);
+        home.addButtonSelectedEvent(event);
+        staffForm.addButtonSelectedEvent(event);
     }
 
     /**
@@ -153,18 +147,6 @@ public class Main extends javax.swing.JFrame {
         mainPanel.repaint();
         mainPanel.revalidate();
     }
-
-    public void addEventMenuSelected(MenuEvent event) {
-        this.event = event;
-        login.addEventMenuSelected(event);
-    }
-    private MenuEvent event;
-
-    public void addEventButtonSelected(ButtonEvent buttonEvent) {
-        this.buttonEvent = buttonEvent;
-        staffForm.addEventButtonSelected(buttonEvent);
-    }
-    private ButtonEvent buttonEvent;
 
     private final VehiclesForm vehiclesForm;
     private StaffForm staffForm;

@@ -4,7 +4,6 @@
  */
 package com.tix.home.staff;
 
-import com.tix.event.MenuEvent;
 import java.awt.Color;
 
 /**
@@ -54,8 +53,8 @@ public class RegisterForm extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        titleLabel.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        titleLabel.setText("Register new user");
+        titleLabel.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        titleLabel.setText("REGISTER NEW USER");
         add(titleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         idLabel.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N

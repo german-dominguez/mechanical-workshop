@@ -30,7 +30,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="com.tix.home.staff.Table" name="table2">
+    <Component class="com.tix.home.staff.Table" name="table">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="10" y="20" width="720" height="360"/>

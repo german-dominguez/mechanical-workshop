@@ -4,8 +4,8 @@
  */
 package com.tix.login;
 
-import com.tix.event.MenuEvent;
 import java.awt.Color;
+import com.tix.event.ButtonEvent;
 
 /**
  *
@@ -45,7 +45,7 @@ public class Login extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         backgroundLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/tix/images/login/wallpaper.png"))); // NOI18N
-        add(backgroundLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 300, 510));
+        add(backgroundLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 300, 450));
 
         titleLabel.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
         titleLabel.setText("SIGN IN");
@@ -140,14 +140,14 @@ public class Login extends javax.swing.JPanel {
     }//GEN-LAST:event_loginButtonMouseExited
 
     private void loginButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseClicked
-        event.menuSelected(3);
+        event.buttonSelected(0);
     }//GEN-LAST:event_loginButtonMouseClicked
 
-    public void addEventMenuSelected(MenuEvent event) {
+    public void addButtonSelectedEvent(ButtonEvent event){
         this.event = event;
     }
-
-    private MenuEvent event;
+    
+    private ButtonEvent event;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel backgroundLabel;

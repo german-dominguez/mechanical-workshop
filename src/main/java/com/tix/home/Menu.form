@@ -30,7 +30,7 @@
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/com/tix/images/dashboard/profile.png"/>
+          <Image iconType="3" name="/com/tix/images/home/profile.png"/>
         </Property>
         <Property name="horizontalTextPosition" type="int" value="0"/>
       </Properties>
@@ -40,7 +40,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="com.tix.dashboard.MenuButton" name="menuButton">
+    <Component class="com.tix.home.MenuButton" name="menuButton">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="0" y="180" width="130" height="-1"/>
