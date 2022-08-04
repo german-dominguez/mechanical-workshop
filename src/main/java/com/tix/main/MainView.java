@@ -1,23 +1,39 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.tix.main;
 
+import com.tix.home.HomeView;
+import com.tix.home.forms.HomeForm;
+import com.tix.home.staff.StaffForm;
+import com.tix.home.forms.VehiclesForm;
+import com.tix.home.staff.RegisterForm;
+import com.tix.login.LoginView;
 import java.awt.Color;
 import javax.swing.JButton;
+import javax.swing.JPanel;
 
 /**
  *
  * @author Germanchoo
  */
-public class Header extends javax.swing.JPanel {
+public class MainView extends javax.swing.JFrame {
 
     /**
-     * Creates new form Header
+     * Creates new form Main
      */
-    public Header() {
+    public MainView() {
+        this.home = new HomeView();
+        this.login = new LoginView();
+        this.homeForm = new HomeForm();
+        this.staffForm = new StaffForm();
+        this.registerForm = new RegisterForm();
+        this.vehiclesForm = new VehiclesForm();
+
         initComponents();
+        setLocationRelativeTo(null);
+        setLayout(null);
     }
 
     /**
@@ -29,10 +45,18 @@ public class Header extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        header = new javax.swing.JPanel();
         exitButton = new javax.swing.JButton();
+        mainPanel = new javax.swing.JPanel();
 
-        setOpaque(false);
-        setLayout(null);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
+        setSize(new java.awt.Dimension(800, 480));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        header.setOpaque(false);
+        header.setLayout(null);
 
         exitButton.setBackground(new java.awt.Color(255, 255, 255));
         exitButton.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
@@ -53,8 +77,16 @@ public class Header extends javax.swing.JPanel {
                 exitButtonMouseExited(evt);
             }
         });
-        add(exitButton);
+        header.add(exitButton);
         exitButton.setBounds(0, 0, 40, 40);
+
+        getContentPane().add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 40));
+
+        mainPanel.setBackground(new java.awt.Color(255, 255, 255));
+        mainPanel.setLayout(new java.awt.BorderLayout());
+        getContentPane().add(mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 450));
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButtonMouseClicked
@@ -71,11 +103,36 @@ public class Header extends javax.swing.JPanel {
         exitButton.setForeground(Color.black);
     }//GEN-LAST:event_exitButtonMouseExited
 
+    public void showFrame(JPanel panel, int width, int height, int exitButtonAlignment) {
+        setSize(width, height);
+        header.setSize(width, 40);
+        mainPanel.setSize(width, height);
+        exitButton.setBounds(exitButtonAlignment, 0, 40, 40);
+        mainPanel.removeAll();
+        mainPanel.add(panel);
+        mainPanel.repaint();
+        mainPanel.revalidate();
+    }
 
     public JButton getExitButton() {
         return exitButton;
     }
+
+    public void setExitButton(JButton exitButton) {
+        this.exitButton = exitButton;
+    }
+
+    private VehiclesForm vehiclesForm;
+    private StaffForm staffForm;
+    private RegisterForm registerForm;
+    private HomeForm homeForm;
+    private LoginView login;
+    private HomeView home;
+
+    private int xMouse, yMouse;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton exitButton;
+    private javax.swing.JPanel header;
+    private javax.swing.JPanel mainPanel;
     // End of variables declaration//GEN-END:variables
 }

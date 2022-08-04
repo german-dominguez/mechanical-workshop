@@ -4,26 +4,21 @@
  */
 package com.tix.home;
 
-import java.awt.Color;
-import java.util.ArrayList;
 import javax.swing.JButton;
-import com.tix.event.ButtonEvent;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  *
  * @author Germanchoo
  */
-public class MenuButton extends javax.swing.JPanel {
+public class HomeView extends javax.swing.JPanel {
 
     /**
-     * Creates new form MenuButton
+     * Creates new form Dashboard
      */
-    public MenuButton() {
+    public HomeView() {
         initComponents();
-        buttons.add(dashboardButton);
-        buttons.add(staffButton);
-        buttons.add(vehiclesButton);
-        buttons.add(logoutButton);
     }
 
     /**
@@ -35,12 +30,26 @@ public class MenuButton extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        formPanel = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        profileLabel = new javax.swing.JLabel();
         dashboardButton = new javax.swing.JButton();
         staffButton = new javax.swing.JButton();
         vehiclesButton = new javax.swing.JButton();
         logoutButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        formPanel.setBackground(new java.awt.Color(255, 255, 255));
+        formPanel.setLayout(new java.awt.BorderLayout());
+        add(formPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 740, 450));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        profileLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        profileLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/tix/images/home/profile.png"))); // NOI18N
+        profileLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         dashboardButton.setBackground(new java.awt.Color(255, 255, 255));
         dashboardButton.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
@@ -53,17 +62,6 @@ public class MenuButton extends javax.swing.JPanel {
         dashboardButton.setFocusable(false);
         dashboardButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         dashboardButton.setIconTextGap(10);
-        dashboardButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                buttonMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                buttonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                buttonMouseExited(evt);
-            }
-        });
 
         staffButton.setBackground(new java.awt.Color(255, 255, 255));
         staffButton.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
@@ -76,17 +74,6 @@ public class MenuButton extends javax.swing.JPanel {
         staffButton.setFocusable(false);
         staffButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         staffButton.setIconTextGap(10);
-        staffButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                buttonMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                buttonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                buttonMouseExited(evt);
-            }
-        });
 
         vehiclesButton.setBackground(new java.awt.Color(255, 255, 255));
         vehiclesButton.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
@@ -99,17 +86,6 @@ public class MenuButton extends javax.swing.JPanel {
         vehiclesButton.setFocusable(false);
         vehiclesButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         vehiclesButton.setIconTextGap(10);
-        vehiclesButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                buttonMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                buttonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                buttonMouseExited(evt);
-            }
-        });
 
         logoutButton.setBackground(new java.awt.Color(255, 255, 255));
         logoutButton.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
@@ -122,31 +98,28 @@ public class MenuButton extends javax.swing.JPanel {
         logoutButton.setFocusable(false);
         logoutButton.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         logoutButton.setIconTextGap(10);
-        logoutButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                buttonMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                buttonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                buttonMouseExited(evt);
-            }
-        });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(dashboardButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(staffButton, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
-            .addComponent(vehiclesButton, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
-            .addComponent(logoutButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 4, Short.MAX_VALUE)
+                        .addComponent(profileLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dashboardButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(vehiclesButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(logoutButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(staffButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(profileLabel)
+                .addGap(4, 4, 4)
                 .addComponent(dashboardButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(staffButton)
@@ -154,41 +127,47 @@ public class MenuButton extends javax.swing.JPanel {
                 .addComponent(vehiclesButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(logoutButton)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap())
         );
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 140, 440));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonMouseEntered
-        for (JButton button : buttons) {
-            if (evt.getSource().equals(button)) {
-                button.setBackground(new Color(225, 225, 225));
-            }
-        }
-    }//GEN-LAST:event_buttonMouseEntered
-
-    private void buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonMouseExited
-        for (JButton button : buttons) {
-            if (evt.getSource().equals(button)) {
-                button.setBackground(new Color(255, 255, 255));
-            }
-        }
-    }//GEN-LAST:event_buttonMouseExited
-
-    private void buttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonMouseClicked
-        int index = buttons.indexOf(evt.getSource());
-        event.buttonSelected(index + 1);
-        buttonMouseExited(evt);
-    }//GEN-LAST:event_buttonMouseClicked
-
-    public void addButtonSelectedEvent(ButtonEvent event) {
-        this.event = event;
+    public void showForm(JPanel panel) {
+        formPanel.removeAll();
+        formPanel.add(panel);
+        formPanel.repaint();
+        formPanel.revalidate();
     }
-    private ButtonEvent event;
 
-    private ArrayList<JButton> buttons = new ArrayList<>();
+    public JButton getDashboardButton() {
+        return dashboardButton;
+    }
+
+    public JButton getLogoutButton() {
+        return logoutButton;
+    }
+
+    public JLabel getProfileLabel() {
+        return profileLabel;
+    }
+
+    public JButton getStaffButton() {
+        return staffButton;
+    }
+
+    public JButton getVehiclesButton() {
+        return vehiclesButton;
+    }
+
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton dashboardButton;
+    private javax.swing.JPanel formPanel;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton logoutButton;
+    private javax.swing.JLabel profileLabel;
     private javax.swing.JButton staffButton;
     private javax.swing.JButton vehiclesButton;
     // End of variables declaration//GEN-END:variables
