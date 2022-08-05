@@ -1,5 +1,6 @@
-package com.tix.home.staff;
+package com.tix.home.vehicles;
 
+import com.tix.home.staff.*;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JButton;
@@ -8,9 +9,9 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.JTableHeader;
 
-public class StaffView extends javax.swing.JPanel {
+public class VehiclesView extends javax.swing.JPanel {
 
-    public StaffView() {
+    public VehiclesView() {
         initComponents();
         tableDefaultRenderer();
     }

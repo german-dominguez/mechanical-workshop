@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package com.tix.home.staff;
+package com.tix.home.staff.upstaff;
 
 import java.awt.Color;
 
@@ -10,12 +10,12 @@ import java.awt.Color;
  *
  * @author Germanchoo
  */
-public class RegisterForm extends javax.swing.JPanel {
+public class UpStaffView extends javax.swing.JPanel {
 
     /**
      * Creates new form RegisterForm
      */
-    public RegisterForm() {
+    public UpStaffView() {
         initComponents();
     }
 
@@ -63,8 +63,8 @@ public class RegisterForm extends javax.swing.JPanel {
 
         idTxtField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         idTxtField.setForeground(new java.awt.Color(102, 102, 102));
-        idTxtField.setText("Ingrese el nombre");
-        idTxtField.setBorder(null);
+        idTxtField.setText("1234567890");
+        idTxtField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         add(idTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 260, 30));
 
         idSeparator.setForeground(new java.awt.Color(0, 153, 255));
@@ -77,8 +77,8 @@ public class RegisterForm extends javax.swing.JPanel {
 
         nameTxtField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         nameTxtField.setForeground(new java.awt.Color(102, 102, 102));
-        nameTxtField.setText("Ingrese el apellido paterno");
-        nameTxtField.setBorder(null);
+        nameTxtField.setText("Enter your name");
+        nameTxtField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         add(nameTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 260, 30));
 
         nameSeparator.setForeground(new java.awt.Color(0, 153, 255));
@@ -91,8 +91,8 @@ public class RegisterForm extends javax.swing.JPanel {
 
         lastNameTxtField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         lastNameTxtField.setForeground(new java.awt.Color(102, 102, 102));
-        lastNameTxtField.setText("Ingrese el apellido materno");
-        lastNameTxtField.setBorder(null);
+        lastNameTxtField.setText("Enter your last name");
+        lastNameTxtField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         add(lastNameTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 260, 30));
 
         lastNameSeparator.setForeground(new java.awt.Color(0, 153, 255));
@@ -110,8 +110,8 @@ public class RegisterForm extends javax.swing.JPanel {
 
         emailTxtField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         emailTxtField.setForeground(new java.awt.Color(102, 102, 102));
-        emailTxtField.setText("Ingrese el domicilio");
-        emailTxtField.setBorder(null);
+        emailTxtField.setText("Enter your email");
+        emailTxtField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         add(emailTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 80, 260, 30));
 
         emailSeparator.setForeground(new java.awt.Color(0, 153, 255));
@@ -124,8 +124,8 @@ public class RegisterForm extends javax.swing.JPanel {
 
         phoneTxtField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         phoneTxtField.setForeground(new java.awt.Color(102, 102, 102));
-        phoneTxtField.setText("Ingrese un número telefónico");
-        phoneTxtField.setBorder(null);
+        phoneTxtField.setText("Enter your phone");
+        phoneTxtField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         add(phoneTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 180, 260, 30));
 
         phoneSeparator.setForeground(new java.awt.Color(0, 153, 255));
@@ -138,13 +138,13 @@ public class RegisterForm extends javax.swing.JPanel {
 
         ageTxtField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         ageTxtField.setForeground(new java.awt.Color(102, 102, 102));
-        ageTxtField.setText("Ingrese un número telefónico");
-        ageTxtField.setBorder(null);
-        add(ageTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, 100, 30));
+        ageTxtField.setText("20");
+        ageTxtField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        add(ageTxtField, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, 40, 30));
 
         ageSeparator.setForeground(new java.awt.Color(0, 153, 255));
         ageSeparator.setPreferredSize(new java.awt.Dimension(200, 10));
-        add(ageSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 320, 100, 10));
+        add(ageSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 320, 40, 10));
 
         newButton.setBackground(new java.awt.Color(0, 134, 190));
         newButton.setFont(new java.awt.Font("Roboto Medium", 0, 18)); // NOI18N

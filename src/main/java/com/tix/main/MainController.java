@@ -1,41 +1,28 @@
 package com.tix.main;
 
 import com.tix.home.HomeView;
-import com.tix.home.HomeModel;
-import com.tix.home.HomeController;
-import com.tix.login.LoginController;
-import com.tix.login.LoginModel;
 import com.tix.login.LoginView;
 import java.awt.Color;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 
 public class MainController {
 
-    private final LoginView loginView;
-
-    private final HomeView homeView;
-    private final HomeModel homeModel;
-    private final HomeController homeController;
-
-    private final MainView view;
-    private final MainModel model;
-
     public MainController(MainView view, MainModel model,
             LoginView loginView,
-            HomeView homeView, HomeModel homeModel, HomeController homeController) {
+            HomeView homeView) {
 
         this.view = view;
         this.model = model;
         this.loginView = loginView;
         this.homeView = homeView;
-        this.homeModel = homeModel;
-        this.homeController = homeController;
 
         /**
          * Header Events
          */
-        view.getHeader().addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
+        view.getHeader().addMouseMotionListener(new MouseMotionAdapter() {
+            public void mouseDragged(MouseEvent evt) {
                 headerMouseDragged(evt);
             }
 
@@ -45,7 +32,7 @@ public class MainController {
                 view.setLocation(x - xMouse, y - yMouse);
             }
         });
-        view.getHeader().addMouseListener(new java.awt.event.MouseAdapter() {
+        view.getHeader().addMouseListener(new MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 headerMousePressed(evt);
             }
@@ -59,18 +46,18 @@ public class MainController {
         /**
          * ExitButton Events
          */
-        view.getExitButton().addMouseListener(new java.awt.event.MouseAdapter() {
+        view.getExitButton().addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+            public void mouseClicked(MouseEvent evt) {
                 exitButtonMouseClicked(evt);
             }
 
             @Override
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
+            public void mouseEntered(MouseEvent evt) {
                 exitButtonMouseEntered(evt);
             }
 
-            public void mouseExited(java.awt.event.MouseEvent evt) {
+            public void mouseExited(MouseEvent evt) {
                 exitButtonMouseExited(evt);
             }
 
@@ -92,13 +79,26 @@ public class MainController {
         /**
          * LoginButton Click Event
          */
-        this.loginView.getLoginButton().addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
+        this.loginView.getLoginButton().addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent evt) {
                 loginButtonMouseClicked(evt);
             }
 
             private void loginButtonMouseClicked(MouseEvent evt) {
                 view.showFrame(homeView, 900, 500, 860);
+            }
+        });
+
+        /**
+         * LogoutButton Click Event
+         */
+        this.homeView.getLogoutButton().addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent evt) {
+                logoutButtonMouseClicked(evt);
+            }
+
+            private void logoutButtonMouseClicked(MouseEvent evt) {
+                view.showFrame(loginView, 800, 450, 0);
             }
         });
     }
@@ -109,4 +109,9 @@ public class MainController {
     }
 
     private int xMouse, yMouse;
+
+    private final LoginView loginView;
+    private final HomeView homeView;
+    private final MainView view;
+    private final MainModel model;
 }

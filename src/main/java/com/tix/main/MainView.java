@@ -5,12 +5,9 @@
 package com.tix.main;
 
 import com.tix.home.HomeView;
-import com.tix.home.forms.HomeForm;
 import com.tix.home.staff.StaffView;
-import com.tix.home.forms.VehiclesForm;
-import com.tix.home.staff.RegisterForm;
+import com.tix.home.staff.upstaff.UpStaffView;
 import com.tix.login.LoginView;
-import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
@@ -26,10 +23,8 @@ public class MainView extends javax.swing.JFrame {
     public MainView() {
         this.home = new HomeView();
         this.login = new LoginView();
-        this.homeForm = new HomeForm();
         this.staffForm = new StaffView();
-        this.registerForm = new RegisterForm();
-        this.vehiclesForm = new VehiclesForm();
+        this.registerForm = new UpStaffView();
 
         initComponents();
         setLayout(null);
@@ -115,12 +110,10 @@ public class MainView extends javax.swing.JFrame {
         return header;
     }
 
-    private VehiclesForm vehiclesForm;
-    private StaffView staffForm;
-    private RegisterForm registerForm;
-    private HomeForm homeForm;
-    private LoginView login;
-    private HomeView home;
+    private final StaffView staffForm;
+    private final UpStaffView registerForm;
+    private final LoginView login;
+    private final HomeView home;
 
     private int xMouse, yMouse;
     // Variables declaration - do not modify//GEN-BEGIN:variables
