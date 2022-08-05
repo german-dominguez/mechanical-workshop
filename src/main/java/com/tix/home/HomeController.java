@@ -1,5 +1,8 @@
 package com.tix.home;
 
+import com.tix.home.staff.StaffController;
+import com.tix.home.staff.StaffModel;
+import com.tix.home.staff.StaffView;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -7,9 +10,13 @@ import javax.swing.JButton;
 
 public class HomeController {
 
-    public HomeController(HomeView view, HomeModel model) {
+    public HomeController(HomeView view, HomeModel model,
+            StaffView staffView, StaffModel staffModel, StaffController staffController) {
         this.view = view;
         this.model = model;
+        this.staffView = staffView;
+        this.staffModel = staffModel;
+        this.staffController = staffController;
 
         addButtonsEvents();
 
@@ -26,49 +33,29 @@ public class HomeController {
                 public void mouseClicked(java.awt.event.MouseEvent evt) {
                     buttonMouseClicked(evt);
                 }
-
-                public void mouseEntered(java.awt.event.MouseEvent evt) {
-                    buttonMouseEntered(evt);
-                }
-
-                public void mouseExited(java.awt.event.MouseEvent evt) {
-                    buttonMouseExited(evt);
-                }
             });
         }
     }
 
-    private void buttonMouseEntered(MouseEvent evt) {
-        for (JButton button : buttons) {
-            if (evt.getSource().equals(button)) {
-                button.setBackground(new Color(225, 225, 225));
-            }
-        }
-    }
-
     private void buttonMouseClicked(MouseEvent evt) {
-        for (JButton button : buttons) {
-            if (evt.getSource().equals(button)) {
-                switch (button.getText()) {
-                    case "Dashboard" -> System.out.println("1");
-                    case "Staff" -> System.out.println("2");
-                    case "Vehicles" -> System.out.println("3");
-                    case "Log out" -> System.out.println("4");
-                }
-            }
+        if (evt.getSource().equals(view.getDashboardButton())) {
+            view.showForm(staffController.getView());
         }
-
-    }
-
-    private void buttonMouseExited(MouseEvent evt) {
-        for (JButton button : buttons) {
-            if (evt.getSource().equals(button)) {
-                button.setBackground(new Color(255, 255, 255));
-            }
+        if (evt.getSource().equals(view.getStaffButton())) {
+            System.out.println("2");
+        }
+        if (evt.getSource().equals(view.getVehiclesButton())) {
+            System.out.println("3");
+        }
+        if (evt.getSource().equals(view.getLogoutButton())) {
+            System.out.println("4");
         }
     }
 
     private ArrayList<JButton> buttons = new ArrayList<>();
     private HomeView view;
     private HomeModel model;
+    private StaffView staffView;
+    private StaffModel staffModel;
+    private StaffController staffController;
 }

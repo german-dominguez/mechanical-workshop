@@ -7,7 +7,6 @@ package com.tix.login;
 import javax.swing.JButton;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import javax.swing.event.EventListenerList;
 
 /**
  *
@@ -63,7 +62,7 @@ public class LoginView extends javax.swing.JPanel {
         userTextField.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
         userTextField.setForeground(new java.awt.Color(204, 204, 204));
         userTextField.setText("Enter your username");
-        userTextField.setBorder(null);
+        userTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         add(userTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 390, 30));
 
         passwordLabel.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
@@ -76,7 +75,7 @@ public class LoginView extends javax.swing.JPanel {
         passwordField.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         passwordField.setForeground(new java.awt.Color(204, 204, 204));
         passwordField.setText("*************");
-        passwordField.setBorder(null);
+        passwordField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 390, 30));
 
         loginButton.setBackground(new java.awt.Color(0, 134, 190));

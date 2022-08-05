@@ -1,11 +1,19 @@
 package com.tix.main;
 
+import com.formdev.flatlaf.FlatLightLaf;
+import com.formdev.flatlaf.IntelliJTheme;
 import com.tix.home.HomeView;
 import com.tix.home.HomeModel;
 import com.tix.home.HomeController;
+import com.tix.home.staff.StaffController;
+import com.tix.home.staff.StaffModel;
+import com.tix.home.staff.StaffView;
 import com.tix.login.LoginController;
 import com.tix.login.LoginModel;
 import com.tix.login.LoginView;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 public class Main {
 
@@ -17,43 +25,33 @@ public class Main {
         LoginView loginView = new LoginView();
         LoginModel loginModel = new LoginModel();
         LoginController loginController = new LoginController(loginView, loginModel);
-       
+
+        StaffView staffView = new StaffView();
+        StaffModel staffModel = new StaffModel();
+        StaffController staffController = new StaffController(staffView, staffModel);
+
         HomeView homeView = new HomeView();
         HomeModel homeModel = new HomeModel();
-        HomeController homeController = new HomeController(homeView, homeModel);
-        
+        HomeController homeController = new HomeController(homeView, homeModel, staffView, staffModel, staffController);
+
         MainModel model = new MainModel();
         MainView view = new MainView();
-        MainController controller = new MainController(view, model, 
-                loginView, loginModel, loginController,homeView, homeModel, homeController);
+        MainController controller = new MainController(view, model,
+                loginView, homeView, homeModel, homeController);
 
-        /* Set the Windows look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+
+        /* Set Look And Feel Theme */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            UIManager.setLookAndFeel(new FlatLightLaf());
+        } catch (UnsupportedLookAndFeelException e) {
         }
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
             controller.run();
+            SwingUtilities.updateComponentTreeUI(view);
+            SwingUtilities.updateComponentTreeUI(homeView);
+            SwingUtilities.updateComponentTreeUI(staffView);
         });
     }
 

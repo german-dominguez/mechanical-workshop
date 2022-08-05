@@ -11,38 +11,61 @@ import java.awt.event.MouseEvent;
 
 public class MainController {
 
-    private LoginView loginView;
-    private LoginModel loginModel;
-    private LoginController loginController;
+    private final LoginView loginView;
 
-    private HomeView homeView;
-    private HomeModel homeModel;
-    private HomeController homeController;
+    private final HomeView homeView;
+    private final HomeModel homeModel;
+    private final HomeController homeController;
 
-    private MainView view;
-    private MainModel model;
+    private final MainView view;
+    private final MainModel model;
 
     public MainController(MainView view, MainModel model,
-            LoginView loginView, LoginModel loginModel, LoginController loginController,
+            LoginView loginView,
             HomeView homeView, HomeModel homeModel, HomeController homeController) {
 
         this.view = view;
         this.model = model;
         this.loginView = loginView;
-        this.loginModel = loginModel;
-        this.loginController = loginController;
         this.homeView = homeView;
         this.homeModel = homeModel;
         this.homeController = homeController;
 
         /**
+         * Header Events
+         */
+        view.getHeader().addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                headerMouseDragged(evt);
+            }
+
+            private void headerMouseDragged(MouseEvent evt) {
+                int x = evt.getXOnScreen();
+                int y = evt.getYOnScreen();
+                view.setLocation(x - xMouse, y - yMouse);
+            }
+        });
+        view.getHeader().addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                headerMousePressed(evt);
+            }
+
+            private void headerMousePressed(MouseEvent evt) {
+                xMouse = evt.getX();
+                yMouse = evt.getY();
+            }
+        });
+
+        /**
          * ExitButton Events
          */
         view.getExitButton().addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitButtonMouseClicked(evt);
             }
 
+            @Override
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 exitButtonMouseEntered(evt);
             }
@@ -69,7 +92,7 @@ public class MainController {
         /**
          * LoginButton Click Event
          */
-        loginController.getView().getLoginButton().addMouseListener(new java.awt.event.MouseAdapter() {
+        this.loginView.getLoginButton().addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 loginButtonMouseClicked(evt);
             }
@@ -85,4 +108,5 @@ public class MainController {
         view.setVisible(true);
     }
 
+    private int xMouse, yMouse;
 }

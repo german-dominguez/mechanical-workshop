@@ -55,22 +55,6 @@ public class LoginController {
          * Login Button Events
          */
         view.getLoginButton().addMouseListener(new java.awt.event.MouseAdapter() {
-
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                loginButtonMouseEntered(evt);
-            }
-
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                loginButtonMouseExited(evt);
-            }
-
-            private void loginButtonMouseEntered(MouseEvent evt) {
-                view.getLoginButton().setBackground(new Color(45, 158, 219));
-            }
-
-            private void loginButtonMouseExited(MouseEvent evt) {
-                view.getLoginButton().setBackground(new Color(0, 124, 190));
-            }
         });
     }
 

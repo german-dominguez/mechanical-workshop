@@ -6,7 +6,7 @@ package com.tix.main;
 
 import com.tix.home.HomeView;
 import com.tix.home.forms.HomeForm;
-import com.tix.home.staff.StaffForm;
+import com.tix.home.staff.StaffView;
 import com.tix.home.forms.VehiclesForm;
 import com.tix.home.staff.RegisterForm;
 import com.tix.login.LoginView;
@@ -27,12 +27,11 @@ public class MainView extends javax.swing.JFrame {
         this.home = new HomeView();
         this.login = new LoginView();
         this.homeForm = new HomeForm();
-        this.staffForm = new StaffForm();
+        this.staffForm = new StaffView();
         this.registerForm = new RegisterForm();
         this.vehiclesForm = new VehiclesForm();
 
         initComponents();
-        setLocationRelativeTo(null);
         setLayout(null);
     }
 
@@ -56,27 +55,26 @@ public class MainView extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         header.setOpaque(false);
+        header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                headerMouseDragged(evt);
+            }
+        });
+        header.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                headerMousePressed(evt);
+            }
+        });
         header.setLayout(null);
 
         exitButton.setBackground(new java.awt.Color(255, 255, 255));
         exitButton.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
         exitButton.setForeground(new java.awt.Color(0, 0, 0));
         exitButton.setText("X");
-        exitButton.setBorder(null);
+        exitButton.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         exitButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         exitButton.setFocusPainted(false);
         exitButton.setFocusable(false);
-        exitButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                exitButtonMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                exitButtonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                exitButtonMouseExited(evt);
-            }
-        });
         header.add(exitButton);
         exitButton.setBounds(0, 0, 40, 40);
 
@@ -87,21 +85,16 @@ public class MainView extends javax.swing.JFrame {
         getContentPane().add(mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 450));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void exitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButtonMouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_exitButtonMouseClicked
+    private void headerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_headerMousePressed
 
-    private void exitButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButtonMouseEntered
-        exitButton.setBackground(Color.red);
-        exitButton.setForeground(Color.white);
-    }//GEN-LAST:event_exitButtonMouseEntered
-
-    private void exitButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButtonMouseExited
-        exitButton.setBackground(Color.white);
-        exitButton.setForeground(Color.black);
-    }//GEN-LAST:event_exitButtonMouseExited
+    private void headerMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerMouseDragged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_headerMouseDragged
 
     public void showFrame(JPanel panel, int width, int height, int exitButtonAlignment) {
         setSize(width, height);
@@ -118,12 +111,12 @@ public class MainView extends javax.swing.JFrame {
         return exitButton;
     }
 
-    public void setExitButton(JButton exitButton) {
-        this.exitButton = exitButton;
+    public JPanel getHeader() {
+        return header;
     }
 
     private VehiclesForm vehiclesForm;
-    private StaffForm staffForm;
+    private StaffView staffForm;
     private RegisterForm registerForm;
     private HomeForm homeForm;
     private LoginView login;
