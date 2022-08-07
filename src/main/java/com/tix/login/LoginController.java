@@ -1,12 +1,9 @@
 package com.tix.login;
 
-import java.awt.Color;
-import java.awt.event.MouseEvent;
-
 public class LoginController {
 
-    private LoginView view;
-    private LoginModel model;
+    private final LoginView view;
+    private final LoginModel model;
 
     public LoginController(LoginView view, LoginModel model) {
         this.view = view;
@@ -15,7 +12,11 @@ public class LoginController {
         /**
          * UserTextField Events
          */
+       //TextPrompt textPrompt = new TextPrompt("Enter your username", view.getUserTextField());
+        //textPrompt.setShow(TextPrompt.Show.FOCUS_LOST);
+        /*
         view.getUserTextField().addMouseListener(new java.awt.event.MouseAdapter() {
+           
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 if (view.getUserTextField().getText().equals(model.getUSER())) {
                     view.getUserTextField().setText("");
@@ -29,11 +30,12 @@ public class LoginController {
 
             private void userTextFieldMousePressed(MouseEvent evt) {
             }
-        });
+        });*/
 
         /**
          * PasswordField Events
          */
+        /*
         view.getPasswordField().addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 passwordFieldMousePressed(evt);
@@ -47,9 +49,9 @@ public class LoginController {
                 if (view.getUserTextField().getText().isEmpty()) {
                     view.getUserTextField().setText(model.getUSER());
                     view.getUserTextField().setForeground(Color.gray);
-                }
+                
             }
-        });
+        });}/*
 
         /**
          * Login Button Events

@@ -35,11 +35,11 @@ public class LoginView extends javax.swing.JPanel {
         titleLabel = new javax.swing.JLabel();
         userLabel = new javax.swing.JLabel();
         userSeparator = new javax.swing.JSeparator();
-        userTextField = new javax.swing.JTextField();
         passwordLabel = new javax.swing.JLabel();
         passwordSeparator = new javax.swing.JSeparator();
         passwordField = new javax.swing.JPasswordField();
         loginButton = new javax.swing.JButton();
+        textField1 = new com.sdominguez.textfield.TextField("Enter your username");
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(800, 450));
@@ -58,12 +58,6 @@ public class LoginView extends javax.swing.JPanel {
 
         userSeparator.setForeground(new java.awt.Color(0, 0, 0));
         add(userSeparator, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 390, 10));
-
-        userTextField.setFont(new java.awt.Font("Roboto", 0, 13)); // NOI18N
-        userTextField.setForeground(new java.awt.Color(204, 204, 204));
-        userTextField.setText("Enter your username");
-        userTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        add(userTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 390, 30));
 
         passwordLabel.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
         passwordLabel.setText("PASSWORD");
@@ -87,6 +81,11 @@ public class LoginView extends javax.swing.JPanel {
         loginButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         loginButton.setFocusable(false);
         add(loginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 140, 40));
+
+        textField1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        textField1.setText("Enter your username");
+        textField1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        add(textField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 390, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     public JButton getLoginButton() {
@@ -105,23 +104,15 @@ public class LoginView extends javax.swing.JPanel {
         this.passwordField = passwordField;
     }
 
-    public JTextField getUserTextField() {
-        return userTextField;
-    }
-
-    public void setUserTextField(JTextField userTextField) {
-        this.userTextField = userTextField;
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel backgroundLabel;
     private javax.swing.JButton loginButton;
     private javax.swing.JPasswordField passwordField;
     private javax.swing.JLabel passwordLabel;
     private javax.swing.JSeparator passwordSeparator;
+    private com.sdominguez.textfield.TextField textField1;
     private javax.swing.JLabel titleLabel;
     private javax.swing.JLabel userLabel;
     private javax.swing.JSeparator userSeparator;
-    private javax.swing.JTextField userTextField;
     // End of variables declaration//GEN-END:variables
 }
